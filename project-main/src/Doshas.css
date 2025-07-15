@@ -1,7 +1,7 @@
 /* Make section full screen */
 .doshas-section {
   width: 100vw;
-  background: linear-gradient(to bottom right, #fefce8, #ecfccb, #d9f99d);
+  background: #fcf4e8;
   display: flex;
   flex-direction: column;
   justify-content: center;
