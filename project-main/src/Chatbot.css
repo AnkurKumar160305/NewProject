@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to bottom right, #fffbeb);
+}
+.chatbot {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 45vw;
+}
+
+.arrow {
+  width: 100%;
+}
+
+.arrow-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  color: rgb(61, 74, 56);
+  font-weight: 700;
+  gap: 13px;
+  border: none;
+  background-image: linear-gradient(to bottom right, #fffbeb);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.arrow-btn:hover {
+  background-color: rgb(248, 121, 48);
+  background-image: none;
+  color: white;
+}
+.arrow-img {
+  height: 20px;
+  width: 20px;
+}
+
+.arrow-btn:hover .arrow-img {
+  filter: invert(1);
+}
+
+.header-bot-icon svg {
+  color: white;
+}
+.header-bot-icon {
+  height: 40px;
+  width: 40px;
+  background-color: #fb923c;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  border: 2px solid rgb(240, 237, 237);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffc;
+  margin: 20px;
+  padding: 20px;
+}
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-family: monospace;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  background-color: #fb923c;
+  border-radius: 15px;
+  padding: 7px 10px;
+  background-image: linear-gradient(to right, #fb923c, #ef4444);
+  border-color: transparent;
+}
+.right p {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.left-data h1 {
+  color: rgb(61, 55, 55);
+}
+
+.left-data p {
+  color: hsl(215.4deg 16.24% 46.87%);
+}
+
+main {
+  background-color: #fffc;
+  border: 2px solid rgb(240, 237, 237);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.main-bot-icon {
+  background-color: #fb923c;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-bot-icon svg {
+  color: #ffffff;
+  height: 18px;
+  width: 20px;
+}
+
+.main-text {
+  line-height: 23px;
+  font-size: 13px;
+  font-family: arial;
+  word-spacing: 3px;
+  color: rgb(50 62 47);
+  padding: 10px;
+  width: 85%;
+  background-image: linear-gradient(to bottom right, #fff5ee);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: left;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(240, 237, 237);
+  border-radius: 15px;
+  background-color: #fffc;
+  margin: 20px;
+  padding: 20px 10px;
+  gap: 15px;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+  font-family: arial;
+  border: 0.5px solid rgb(196 209 196);
+  border-radius: 10px;
+  padding: 10px;
+}
+.aeroplane {
+  padding: 7px 25px;
+  background-color: #ffa977;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.aeroplane img {
+  height: 25px;
+  width: 25px;
+  font-weight: 700;
+}
+.footer-div {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.footer-buttons {
+  display: flex;
+  gap: 10px;
+  justify-self: center;
+  margin: 8px;
+  padding: 2px 5px;
+}
+
+.footer-buttons button {
+  border-radius: 10px;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #fffc;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-buttons button img {
+  height: 20px;
+  width: 20px;
+}
+.leaf {
+  border: 0.5px solid orange;
+  color: rgb(255, 136, 0);
+}
+
+.leaf:hover {
+  background-color: #ffedde;
+  color: white;
+}
+.leaf:hover img {
+  filter: brightness(0) invert(1);
+}
+.star {
+  border: 0.5px solid rgb(22, 163, 22);
+  color: rgb(22, 163, 22);
+}
+.star:hover {
+  background-color: rgb(220, 255, 232);
+  color: white;
+}
+.star:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.heart {
+  border: 0.5px solid rgb(46, 95, 255);
+  color: rgb(49, 95, 255);
+}
+.heart:hover {
+  background-color: rgb(231, 237, 255);
+  color: white;
+}
+.heart:hover img {
+  filter: brightness(0) invert(1);
+}

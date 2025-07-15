@@ -1,0 +1,60 @@
+/* Full width + optional full height */
+.journey {
+  width: 100vw;
+  min-height: 50vh;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #fefce8, #ecfccb, #d9f99d);
+  box-sizing: border-box;
+}
+
+/* Section Title */
+.journey h2 {
+  font-size: 2rem;
+  color: #c2410c;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Flex layout for steps */
+.journey-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Each step card */
+.step {
+  background-color: #ffffffd0;
+  border-radius: 12px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon wrapper */
+.step .icon {
+  margin-bottom: 15px;
+  color: #ea580c;
+}
+
+/* Step title */
+.step h4 {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Step description */
+.step p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}

@@ -1,0 +1,153 @@
+/* === BASE BODY STYLING === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* === CONTAINER === */
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* === CARD === */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* === ICON CIRCLE === */
+.icon-circle {
+  background-color: #f97316;
+  color: white;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.icon-circle svg {
+  width: 37px;
+  height: 37px;
+  stroke-width: 2;
+}
+
+/* === HEADINGS === */
+.title {
+  font-size: 23px;
+  color: #f97316;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* === LABEL AND INPUT === */
+.label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid #f9be82;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #f97316;
+}
+
+/* Autofill override */
+input:-webkit-autofill {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* === BUTTON GROUP === */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* === BUTTON STYLES === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  min-width: 213px;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* === BACK BUTTON === */
+.back-btn {
+  color: black;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.back-btn:hover {
+  background-color: #f97316;
+  color: white;
+}
+
+/* === BEGIN ASSESSMENT BUTTON === */
+.assess-btn {
+  background: linear-gradient(to left, #fc983a, #f57c00);
+  color: white;
+  opacity: 1;
+}
+
+.assess-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.assess-btn:hover:not(:disabled) {
+  background-color: #fb923c;
+}

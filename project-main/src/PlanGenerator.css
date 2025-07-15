@@ -1,0 +1,305 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #fffbeb);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.Wellness {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 720px;
+  padding: 20px;
+}
+
+/* ===== BACK BUTTON ===== */
+.arrow {
+  width: 100%;
+}
+
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #3d4a38;
+  background: linear-gradient(to bottom right, #fffbeb);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: fit-content;
+}
+
+.arrow-btn:hover {
+  background-color: #f87930;
+  background-image: none;
+  color: white;
+}
+
+.arrow-img {
+  width: 20px;
+  height: 20px;
+}
+
+.arrow-btn:hover .arrow-img {
+  filter: invert(1);
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffffcc;
+  border: 1px solid #d4d9e1;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-bot-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#4ade80, #10b981);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bot-icon svg {
+  color: white;
+}
+
+.left-data h1 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #323e2f;
+}
+
+.left-data p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.right {
+  background: linear-gradient(#4ade80, #059669);
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+.right p {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  width: 100%;
+  background: white;
+  border: 1px solid #d4d9e1;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #323e2f;
+}
+
+/* ===== PLAN DURATION ===== */
+.plan-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-duration-heading {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3d4a38;
+}
+
+.plan-duration-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.plan-duration-buttons button,
+.day-btn {
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid #d4d9e1;
+  background-color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.day-btn.active {
+  background-color: #f87930;
+  color: white;
+}
+
+/* ===== REMINDERS ===== */
+.Reminders {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Reminders-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Reminders-heading {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3d4a38;
+}
+
+.Reminders-text {
+  font-size: 13px;
+  color: #3d4a38;
+}
+
+.onoff {
+  width: 48px;
+  height: 25px;
+  background-color: #e2e8f0;
+  border-radius: 15px;
+  position: relative;
+  padding: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.onoff button {
+  width: 21px;
+  height: 21px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 2px;
+  transition: left 0.3s ease;
+}
+
+.onoff.active {
+  background-color: #f87930;
+}
+
+.onoff.active button {
+  left: 25px;
+}
+
+/* ===== DESCRIPTION TEXTAREA ===== */
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description-heading {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3d4a38;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #c4d1c4;
+  resize: vertical;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+textarea.active-textarea {
+  border: 1px solid orange;
+}
+
+/* ===== BUTTON: GENERATE PLAN ===== */
+.get-solution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-image: linear-gradient(135deg, #f97316, #ea580c, #c2410c);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.get-solution svg {
+  width: 17px;
+  height: 17px;
+}
+
+.get-solution:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .Wellness,
+  main,
+  header {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .arrow-btn {
+    font-size: 14px;
+  }
+
+  .left-data h1 {
+    font-size: 20px;
+  }
+
+  .main-heading {
+    font-size: 20px;
+  }
+
+  .plan-duration-buttons {
+    flex-direction: column;
+  }
+
+  .get-solution {
+    font-size: 13px;
+  }
+}

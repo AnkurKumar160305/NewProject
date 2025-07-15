@@ -1,0 +1,352 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--bg-lighter, #fffdf9);
+  color: #333;
+  line-height: 1.6;
+}
+
+.main-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* HEADER */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+}
+
+.site-title {
+  font-size: 22px;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links button {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  margin-left: 15px;
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  background: #ff702d;
+  color: white;
+  border-radius: 8px;
+}
+
+/* HERO */
+.hero {
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100vw;
+  text-align: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(to bottom, #fce8ce, #fcf4e8);
+}
+
+.logo-ring {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: zoomRotate 3s linear infinite;
+}
+
+.logo-ring img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #f97316;
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn.orange {
+  background: linear-gradient(to right, #f9a825, #f57c00);
+  color: white;
+}
+
+.btn.orange:hover {
+  background: linear-gradient(to right, #ffb300, #fb8c00);
+}
+
+.btn.white {
+  background: white;
+  border: 1px solid #e7591c;
+  color: #e7591c;
+}
+
+.btn.white:hover {
+  background: #f3f3f3;
+  border-color: #999;
+  color: black;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.stats div {
+  min-width: 140px;
+  text-align: center;
+}
+
+/* DOSHAS */
+.doshas {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.dosha-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  width: 320px;
+  background: white;
+  color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 2rem;
+}
+
+.card p,
+.card span {
+  font-size: 1rem;
+}
+
+.vata {
+  background: linear-gradient(135deg, #2d70ab, #76cde8);
+}
+
+.pitta {
+  background: linear-gradient(135deg, #f28b0d, #f57771);
+}
+
+.kapha {
+  background: linear-gradient(135deg, #33b75f, #3cc7ad);
+}
+
+/* JOURNEY */
+.journey {
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.journey-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step {
+  width: 280px;
+  height: 260px;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(to bottom, #f76205, #f37e30);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2d3d2f;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* MODAL FIXES */
+.modal-overlay {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.signin-modal,
+.signup-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 400px;
+  width: calc(100% - 2rem);
+}
+
+/* ANIMATIONS */
+@keyframes zoomRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .dosha-cards,
+  .journey-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .step {
+    width: 100%;
+    max-width: 90vw;
+  }
+}

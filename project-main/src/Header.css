@@ -1,0 +1,78 @@
+/* Root font setting for smooth rendering */
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #fef9d6, #ecfccb);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  font-family: inherit;
+}
+
+/* Logo section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ea580c;
+  margin: 0;
+  letter-spacing: -0.4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Link and button styles */
+.nav-links a,
+.nav-links button {
+  all: unset;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: inherit;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  background: #f97316;
+  color: #fff;
+}
