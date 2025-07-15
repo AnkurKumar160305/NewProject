@@ -23,7 +23,7 @@ function Learn() {
       {visibleSection === "page1" && (
         <div className="page1">
           <div className="box2">
-            <div className="logo">
+            <div className="logo1">
               <img src={leafLogo} alt="Tridosha leaf logo" />
             </div>
             <h1>What is Ayurveda?</h1>

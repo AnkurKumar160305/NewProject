@@ -31,10 +31,24 @@ body {
   align-items: center;
 }
 
-.logo {
-  width: 50px;
+.logo1 {
+  width:50px;
+  margin-bottom:20px;
   height: 50px;
+  border-radius: 30px;
+  background: #ff702d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo1 img{
+  margin:0 auto;
+  margin:10px;
+  width: 30px;
+  height: 30px;
   margin-right: 12px;
+
 }
 
 .site-title {
