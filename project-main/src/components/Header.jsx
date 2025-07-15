@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Leaf } from "lucide-react";
-import '../Header.css';
+import "../Header.css";
 
 const Header = ({ onSignInClick, onSignUpClick }) => {
   return (
@@ -10,6 +10,7 @@ const Header = ({ onSignInClick, onSignUpClick }) => {
         <div className="logo">
           <Leaf color="#f97316" size={50} strokeWidth={2.5} />
         </div>
+
         <h1 className="site-title">Tridosha AI</h1>
       </div>
       <nav className="nav-links">

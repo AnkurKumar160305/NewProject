@@ -1,0 +1,88 @@
+.hero {
+  padding: 40px 20px 30px;
+  text-align: center;
+  background: linear-gradient(to bottom, #fefce8, #f0fdf4);
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo-ring img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: #fef3c7;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #ea580c;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 15px;
+  max-width: 600px;
+  margin: 10px auto 24px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn.orange {
+  background-color: #f97316;
+  color: white;
+}
+
+.btn.orange:hover {
+  background-color: #ea580c;
+}
+
+.btn.white {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn.white:hover {
+  background-color: #fef9c3;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.stats strong.highlight {
+  display: block;
+  font-size: 18px;
+  color: #f97316;
+  font-weight: 600;
+}

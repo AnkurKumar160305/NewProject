@@ -1,31 +1,40 @@
-/* === BASE BODY STYLING === */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #fff8f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
 }
 
-/* === CONTAINER === */
 .container {
   width: 100%;
-  max-width: 500px;
-  padding: 20px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
+  padding: 20px;
 }
 
-/* === CARD === */
 .card {
-  background: white;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background: white;
 }
+
+/* Optional media query for larger screens */
+@media (min-width: 900px) {
+  .card {
+    width: 50%;
+  }
+}
+
+
 
 /* === ICON CIRCLE === */
 .icon-circle {
@@ -93,14 +102,13 @@ input:-webkit-autofill {
   -webkit-text-fill-color: black !important;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-/* === BUTTON GROUP === */
 .button-group {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: nowrap; /* ✅ Prevent wrapping */
 }
+
 
 /* === BUTTON STYLES === */
 .btn {
