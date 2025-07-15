@@ -175,36 +175,6 @@ h1 {
   min-width: 140px;
   text-align: center;
 }
-/* JOURNEY */
-.journey {
-  padding: 2rem 1rem;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-.journey-steps {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.step {
-  width: 280px;
-  height: 260px;
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: 0.3s ease;
-}
-
-.step:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
 
 /* CTA */
 .cta {

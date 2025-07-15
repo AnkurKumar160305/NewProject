@@ -1,37 +1,48 @@
 .hero {
-  padding: 40px 20px 30px;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100vw;
   text-align: center;
-  background: linear-gradient(to bottom, #fefce8, #f0fdf4);
-  font-family: "Poppins", sans-serif;
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, #fce8ce, #fcf4e8);
+}
+
+.logo-ring {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: zoomRotate 3s linear infinite;
 }
 
 .logo-ring img {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
-.hero h1 {
-  font-size: 28px;
-  margin: 0;
-  color: #ea580c;
-  font-weight: 700;
+h1 {
+  font-size: 3rem;
+  color: #f97316 !important;
+  margin: 0.5rem 0;
 }
 
 .subtitle {
-  font-size: 15px;
-  max-width: 600px;
-  margin: 10px auto 24px;
-  color: #444;
-  line-height: 1.5;
+  margin-bottom: 0 !important;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
 }
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .btn {

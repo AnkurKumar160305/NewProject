@@ -6,7 +6,7 @@ import {
   Heart,
   MessageCircle,
   Calendar,
-} from "lucide-react"; // ✅ Icons
+} from "lucide-react"; 
 
 const steps = [
   {
@@ -38,7 +38,7 @@ const Journey = () => (
       {steps.map((step, i) => {
         const Icon = step.icon;
         return (
-          <div className="step" key={i}>
+          <div className={`step step-${i}`} key={i}>
             <div className="icon">
               <Icon size={40} strokeWidth={2.5} />
             </div>

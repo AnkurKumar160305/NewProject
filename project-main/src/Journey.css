@@ -3,14 +3,14 @@
   width: 100vw;
   min-height: 50vh;
   padding: 50px 20px;
-  background: linear-gradient(to right, #fefce8, #ecfccb, #d9f99d);
+  background: linear-gradient(to bottom, #fce8ce, #fcf4e8);
   box-sizing: border-box;
 }
 
 /* Section Title */
 .journey h2 {
   font-size: 2rem;
-  color: #c2410c;
+  color: #000000;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -28,6 +28,7 @@
   background-color: #ffffffd0;
   border-radius: 12px;
   padding: 20px;
+  border: 1px solid #b8afaf;
   width: 260px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
@@ -42,7 +43,18 @@
 /* Icon wrapper */
 .step .icon {
   margin-bottom: 15px;
-  color: #ea580c;
+}
+.step-0 .icon {
+  color: blue;
+}
+.step-1 .icon {
+  color: rgb(255, 2, 2);
+}
+.step-2 .icon {
+  color: rgb(29, 169, 5);
+}
+.step-3 .icon {
+  color: rgb(107, 15, 115);
 }
 
 /* Step title */
