@@ -1,19 +1,20 @@
 /* Make section full screen */
 .doshas-section {
   width: 100vw;
-  background: #fcf4e8;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 27px 20px;
   box-sizing: border-box;
 }
 
 /* Section title styling */
 .doshas-title {
+  margin-top: 17px;
   font-size: 2rem;
-  color: #c2410c;
+  color: #000000;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
@@ -29,7 +30,6 @@
 
 /* Individual card styles */
 .card {
-  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
   padding: 20px;
   width: 220px;
@@ -51,17 +51,28 @@
 .card h3 {
   font-size: 1.2rem;
   margin-bottom: 4px;
-  color: #333;
+  color: #ffffff;
 }
 
 .card p {
-  font-style: italic;
-  color: #777;
+  font-style: normal;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 
 .card span {
   font-size: 0.9rem;
-  font-weight: bold;
-  color: #ea580c;
+  font-weight: 600;
+  color: #ffffff;
+}
+.card.vata {
+  background: linear-gradient(135deg, #2d70ab, #76cde8);
+}
+
+.card.pitta {
+  background: linear-gradient(135deg, #f28b0d, #f57771);
+}
+
+.card.kapha {
+  background: linear-gradient(135deg, #33b75f, #3cc7ad);
 }

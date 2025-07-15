@@ -111,6 +111,7 @@ h1 {
 }
 
 .subtitle {
+  margin-bottom: 0 !important;
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
@@ -174,51 +175,6 @@ h1 {
   min-width: 140px;
   text-align: center;
 }
-
-/* DOSHAS */
-.doshas {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.dosha-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.card {
-  width: 320px;
-  background: white;
-  color: white;
-  padding: 1rem;
-  border-radius: 14px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-  font-size: 2rem;
-}
-
-.card p,
-.card span {
-  font-size: 1rem;
-}
-
-.vata {
-  background: linear-gradient(135deg, #2d70ab, #76cde8);
-}
-
-.pitta {
-  background: linear-gradient(135deg, #f28b0d, #f57771);
-}
-
-.kapha {
-  background: linear-gradient(135deg, #33b75f, #3cc7ad);
-}
-
 /* JOURNEY */
 .journey {
   padding: 2rem 1rem;

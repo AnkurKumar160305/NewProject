@@ -59,7 +59,7 @@ body {
 }
 
 .logo {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   width: 60px;
   height: 60px;
   margin-right: 12px;
@@ -216,56 +216,9 @@ h1 {
 }
 
 .stats p {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: var(--gray-text);
   margin: 0;
-}
-
-/* DOSHAS */
-.doshas {
-  background: #fffcf7;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-h2 {
-  font-size: 40px;
-  margin-bottom: 1.5rem;
-}
-
-.dosha-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-}
-
-.card {
-  background: white;
-  padding: 1rem;
-  max-width: 380px;
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  text-align: center;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.vata {
-  background: linear-gradient(135deg, #2d70ab, #76cde8);
-}
-
-.pitta {
-  background: linear-gradient(135deg, #f28b0d, #f57771);
-}
-
-.kapha {
-  background: linear-gradient(135deg, #33b75f, #3cc7ad);
 }
 
 /* JOURNEY */

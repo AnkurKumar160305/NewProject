@@ -1,6 +1,6 @@
 /* Root font setting for smooth rendering */
 body {
-  font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -29,7 +29,7 @@ body {
 }
 
 .logo-section .logo {
-  background-color: #fef3c7 !important;
+  background-color: #ffffff !important;
 }
 
 .logo {
@@ -42,14 +42,13 @@ body {
   justify-content: center;
 }
 
-
 .site-title {
   font-size: 24px;
   font-weight: 700;
   color: #ea580c;
   margin: 0;
   letter-spacing: -0.4px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Navigation links */
@@ -58,7 +57,7 @@ body {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Link and button styles */
