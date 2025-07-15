@@ -137,7 +137,7 @@ h1 {
 .subtitle {
   max-width: 600px;
   margin: 0 auto 1.5rem;
-  font-size: 17px;
+  font-size: 17px !important;
 }
 
 .hero-buttons {
@@ -189,7 +189,7 @@ h1 {
 
 .btn.white {
   background: white;
-  color: var(--orange-dark);
+  color: rgb(255, 101, 30);
   border: 1px solid var(--orange-dark);
 }
 
@@ -220,61 +220,156 @@ h1 {
   color: var(--gray-text);
   margin: 0;
 }
-
-/* CTA SECTION */
-.cta {
-  background: linear-gradient(to bottom, #f76205, #f37e30);
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+/* Full width + optional full height */
+.journey {
+  width: 100vw;
+  min-height: 50vh;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #fce8ce, #fcf4e8);
+  box-sizing: border-box;
 }
 
-.cta h3 {
+/* Section Title */
+.journey h2 {
   font-size: 2rem;
-}
-
-.cta p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-}
-
-/* MODALS (signin/signup) – already well-defined in your version. No changes needed. */
-
-/* FOOTER */
-footer {
-  background-color: #2d3d2f;
-  color: white;
-  padding: 40px 20px;
+  color: #000000;
   text-align: center;
+  margin-bottom: 40px;
 }
 
-footer h2 {
+/* Flex layout for steps */
+.journey-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Each step card */
+.step {
+  background-color: #ffffffd0;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #b8afaf;
+  width: 260px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon wrapper */
+.step .icon {
+  margin-bottom: 15px;
+}
+.step-0 .icon {
+  color: blue;
+}
+.step-1 .icon {
+  color: rgb(255, 2, 2);
+}
+.step-2 .icon {
+  color: rgb(29, 169, 5);
+}
+.step-3 .icon {
+  color: rgb(107, 15, 115);
+}
+
+/* Step title */
+.step h4 {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Step description */
+.step p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 30px 0;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .flogo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.brand h2 {
+  margin: 0;
   font-size: 1.8rem;
+}
+
+.brandpara {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.footer-content h3 {
+  font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
-footer a {
+.footer-content ul {
+  list-style: none;
+  padding-left: 190px;
+}
+
+.footer-content ul li {
+  margin-bottom: 8px;
+}
+
+.footer-content a {
   color: white;
   text-decoration: none;
 }
 
-footer a:hover {
+.footer-content a:hover {
   text-decoration: underline;
 }
 
 .ficon {
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 15px;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+  color: #ddd;
 }
 
 .footer-bottom {
+  text-align: center;
   border-top: 1px solid #444;
-  padding-top: 20px;
+  padding-top: 15px;
   margin-top: 20px;
   font-size: 14px;
+  color: #ccc;
 }
 
 /* ANIMATIONS */

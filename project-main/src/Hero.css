@@ -34,7 +34,7 @@ h1 {
   margin-bottom: 0 !important;
   max-width: 700px;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: 17px;
 }
 
 .hero-buttons {
@@ -68,13 +68,15 @@ h1 {
 }
 
 .btn.white {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ddd;
+  background: white;
+  color: rgb(255, 101, 30);
+  border: 1px solid var(--orange-dark);
 }
 
 .btn.white:hover {
-  background-color: #fef9c3;
+  background: #fafafa;
+  color: #000;
+  border-color: #999;
 }
 
 .stats {

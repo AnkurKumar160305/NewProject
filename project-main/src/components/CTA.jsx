@@ -1,4 +1,5 @@
 import React from "react";
+import CTADash from "../CTADash";
 import { Link } from "react-router-dom";
 
 const CTA = () => (
