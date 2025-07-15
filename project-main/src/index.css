@@ -59,6 +59,7 @@ body {
 }
 
 .logo {
+  background-color: #ffffff;
   width: 60px;
   height: 60px;
   margin-right: 12px;
@@ -117,7 +118,6 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-  margin-bottom: 1rem;
   animation: zoomRotate 3s linear infinite;
 }
 
