@@ -1,6 +1,8 @@
 import React from "react";
 import leaf from "../assets/leaf.png";
-import { Sparkles, BookOpen } from "lucide-react"; // Import icons
+import { Sparkles, BookOpen } from "lucide-react"
+import "../Hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => (
   <section className="hero">
@@ -9,15 +11,17 @@ const Hero = () => (
     </div>
     <h1>Tridosha AI</h1>
     <p className="subtitle">
-      Discover your unique Ayurvedic constitution and receive personalized wellness guidance powered by ancient wisdom and modern AI.
+      Discover your unique Ayurvedic constitution and receive personalized
+      wellness guidance powered by ancient wisdom and modern AI.
     </p>
     <div className="hero-buttons">
-      <button className="btn orange">
+      <Link to="/name-entry" className="btn orange">
         <Sparkles size={18} /> Start Dosha Assessment
-      </button>
-      <button className="btn white">
+      </Link>
+
+      <Link to="/learn"  className="btn white">
         <BookOpen size={18} /> Learn About Ayurveda
-      </button>
+      </Link>
     </div>
     <div className="stats">
       <div>

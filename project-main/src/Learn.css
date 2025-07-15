@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +8,13 @@ body {
   background: var(--bg-lighter, #fffdf9);
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
+
+  /* ADD THESE: */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 
 /* HEADER */
 .site-header {
@@ -111,7 +119,8 @@ body {
 }
 
 .box2 {
-  background: linear-gradient(135deg, #e76b06, #e3640a);
+  /* background: linear-gradient(135deg, #e76b06, #e3640a); */
+  background: linear-gradient(135deg, #ffc595, #ff964a);
   color: white;
   border-radius: 15px;
   padding: 50px 30px;
@@ -262,7 +271,7 @@ body {
 }
 
 .last {
-  height: auto;
+  height: 750px;
   min-height: 150px;
   box-sizing: border-box;
   text-align: center;
