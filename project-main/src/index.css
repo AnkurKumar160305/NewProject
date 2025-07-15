@@ -100,7 +100,7 @@ body {
 /* HERO SECTION */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   background: linear-gradient(to bottom, #fce8ce, #fcf4e8);
   display: flex;
   flex-direction: column;
@@ -129,7 +129,7 @@ body {
 
 h1 {
   font-size: 3rem;
-  color: var(--orange);
+  color: #f97316 !important;
   margin-bottom: 0.5rem;
   line-height: 1.2;
 }
@@ -145,7 +145,7 @@ h1 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-top: 1rem !important;
 }
 
 /* BUTTONS */
