@@ -44,6 +44,7 @@ const Contact = () => {
   };
 
   return (
+  <body className="Contact">
     <div className="container">
       <div className="header-section fade-in">
         <h1>Get in Touch</h1>
@@ -139,6 +140,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+  </body>
   );
 };
 
