@@ -79,7 +79,7 @@ const Contact = () => {
             </div>
             <div className="form-group full-width">
               <label htmlFor="message">Message</label>
-              <textarea name="message" value={formData.message} onChange={handleChange} required />
+              <textarea name="message" placeholder="Tell us how we can help you..." value={formData.message} onChange={handleChange} required />
             </div>
             <button type="submit" className="submit-btn">Send Message</button>
           </form>

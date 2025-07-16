@@ -1,17 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Leaf } from "lucide-react";
 
 const PrivacyPolicy = () => {
   return (
+  <body className="pribody">
     <div className="privacy-container">
       {/* Header */}
       <header className="privacy-header">
-        <div className="logo">
-          <img src="/images/leaf.png" alt="Tridosha Logo" className="logo-img" />
-          <span className="logo-text">Tridosha AI</span>
+        <div className="pri-logo">
+          <div className="pri-logo-img">
+            <Leaf color="#f97316" size={50} strokeWidth={1.5} />
+          </div>
+          <span className="pri-logo-text">Tridosha AI</span>
         </div>
         <h1>Privacy Policy</h1>
-        <p className="last-updated">Last updated: January 2025</p>
+        <p className="pri-last-updated">Last updated: January 2025</p>
       </header>
 
       {/* Content */}
@@ -109,12 +113,8 @@ const PrivacyPolicy = () => {
           Back to Home
         </Link>
       </div>
-
-      {/* Footer */}
-      <footer className="footer">
-        <p>&copy; 2025 Tridosha AI. All rights reserved.</p>
-      </footer>
     </div>
+    </body>
   );
 };
 

@@ -14,25 +14,13 @@ import NameEntryPage from "/src/components/NameEntryPage.jsx";
 import Dashboard from "/src/components/Dashboard.jsx";
 import Result from "/src/components/Result.jsx";
 import Quiz from "/src/components/Quiz.jsx";
+import PrivacyPolicy from "/src/components/PrivacyPolicy.jsx";
+import CookiesPolicy from "/src/components/CookiesPolicy.jsx";
+
 
 // Modals
 import SignInModal from "/src/components/SignInModal.jsx";
 import SignUpModal from "/src/components/SignUpModal.jsx";
-
-// Static Page Components
-const PrivacyPolicy = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Privacy Policy</h1>
-    <p>This is where your privacy policy content goes.</p>
-  </div>
-);
-
-const CookiesPolicy = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Cookies Policy</h1>
-    <p>This is where your cookies policy content goes.</p>
-  </div>
-);
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);

@@ -3,6 +3,7 @@ import "../CookiesPolicy.css";
 
 const CookiePolicy = () => {
   return ( // Removed the wrapping React.Fragment
+    <body className="Cookies">
     <div className="min-h-screen font-[Inter] bg-gradient-to-br from-[#fef7ed] via-[#fef3c7] to-[#fefce8] text-gray-800">
       <div className="max-w-3xl mx-auto px-4 py-8">
         {/* Header */}
@@ -149,6 +150,7 @@ const CookiePolicy = () => {
         </footer>
       </div>
     </div>
+    </body>
   );
 };
 

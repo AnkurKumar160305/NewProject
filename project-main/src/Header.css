@@ -35,6 +35,7 @@ body {
 .logo {
   background-color: #fef3c7;
   border-radius: 50%;
+  margin-bottom: 0 !important;
   width: 48px !important;
   height: 48px !important;
   display: flex;
