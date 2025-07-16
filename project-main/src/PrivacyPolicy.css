@@ -1,163 +1,109 @@
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.pribody {
+
+.privacy-page {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   color: #1f2937;
   background: linear-gradient(to bottom right, #fef7ed, #fef3c7, #fefce8);
   min-height: 100vh;
-}
-/* Container */
-.privacy-container {
-  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* Header */
+/* Header section */
 .privacy-header {
   text-align: center;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 3rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
   border-bottom: 2px solid #ea580c;
 }
 
-.pri-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.pri-logo-img {
-  width: 60px;
-  height: 60px;
-}
-
-.pri-logo-text {
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: #ea580c;
-}
-
 .privacy-header h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1f2937;
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.privacy-updated {
+  font-size: 0.95rem;
+  color: #6b7280;
   margin-bottom: 0.5rem;
 }
 
-.pri-last-updated {
-  font-size: 1rem;
-  color: #6b7280;
-}
-
-/* Main content */
-.privacy-content {
-  background: white;
+/* Main card container */
+.privacy-card {
+  background-color: #ffffff;
   border-radius: 1rem;
-  padding: 2.5rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  padding: 2rem;
+  width: 900px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
 }
 
-.privacy-content h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
+.privacy-card section + section {
   margin-top: 2rem;
-  margin-bottom: 1rem;
+}
+
+.privacy-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 0.5rem;
 }
 
-.privacy-content h2:first-child {
-  margin-top: 0;
-}
-
-.privacy-content p {
+.privacy-card p {
   margin-bottom: 1rem;
   color: #4b5563;
 }
 
-.privacy-content ul {
-  margin: 1rem 0;
+.privacy-card ul {
   padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.privacy-content li {
+.privacy-card li {
   margin-bottom: 0.5rem;
   color: #4b5563;
 }
 
-/* Contact Info */
-.contact-info {
-  background: #fef7ed;
+/* Contact section */
+.privacy-contact {
+  background: #fff7ed;
   border: 1px solid #fed7aa;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
   margin-top: 2rem;
 }
 
-.contact-info h3 {
-  color: #ea580c;
+.privacy-contact h3 {
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-/* Back Link */
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   color: #ea580c;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #ea580c;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
-  margin-top: 2rem;
-}
-
-.back-link:hover {
-  background: #ea580c;
-  color: white;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 2rem 0;
-  color: #6b7280;
-  border-top: 1px solid #e5e7eb;
-  margin-top: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Responsive */
-@media screen and (max-width: 640px) {
-  .privacy-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .privacy-content {
-    padding: 1.5rem;
-  }
-
+@media (max-width: 640px) {
   .privacy-header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
-  .logo-text {
-    font-size: 1.5rem;
+  .privacy-logo {
+    font-size: 1.25rem;
   }
 
-  .back-link {
-    width: 100%;
-    justify-content: center;
+  .privacy-card {
+    padding: 1.5rem;
   }
 }

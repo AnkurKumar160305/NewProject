@@ -10,36 +10,20 @@
   color: #1f2937;
   background: linear-gradient(to bottom right, #fef7ed, #fef3c7, #fefce8);
   min-height: 100vh;
-  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-.header {
+.cookie-header {
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem 0;
   border-bottom: 2px solid #ea580c;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  margin-bottom: 1rem;
-}
-
-.logo-text {
-  margin-left: 0px;
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: #ea580c;
-}
-
 h1 {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #1f2937;
   margin-bottom: 0.5rem;
 }
@@ -49,7 +33,7 @@ h1 {
   font-size: 1rem;
 }
 
-.content {
+.cookie-card {
   background: white;
   border-radius: 1rem;
   padding: 2.5rem;
@@ -64,10 +48,6 @@ h2 {
   margin: 2rem 0 1rem 0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #e5e7eb;
-}
-
-h2:first-child {
-  margin-top: 0;
 }
 
 h3 {
@@ -92,31 +72,31 @@ li {
   color: #4b5563;
 }
 
-.cookie-table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
   background: white;
 }
 
-.cookie-table th,
-.cookie-table td {
+table th,
+table td {
   border: 1px solid #e5e7eb;
   padding: 0.75rem;
   text-align: left;
 }
 
-.cookie-table th {
+table th {
   background: #f9fafb;
   font-weight: 600;
   color: #374151;
 }
 
-.cookie-table td {
+table td {
   color: #4b5563;
 }
 
-.highlight-box {
+.cookie-box {
   background: #fef7ed;
   border: 1px solid #fed7aa;
   border-radius: 0.5rem;
@@ -124,12 +104,17 @@ li {
   margin: 1.5rem 0;
 }
 
-.highlight-box h3 {
+.cookie-box h3 {
   color: #ea580c;
   margin-top: 0;
 }
 
-.contact-info {
+.box-note {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.cookie-contact {
   background: #fef7ed;
   border: 1px solid #fed7aa;
   border-radius: 0.5rem;
@@ -137,50 +122,19 @@ li {
   margin: 2rem 0;
 }
 
-.contact-info h3 {
+.cookie-contact h3 {
   color: #ea580c;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #ea580c;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #ea580c;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
-  margin-top: 2rem;
-}
-
-.back-link:hover {
-  background: #ea580c;
-  color: white;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem 0;
-  color: #6b7280;
-  border-top: 1px solid #e5e7eb;
-  margin-top: 3rem;
-}
-.logo img {
-  width: 60px;
-  height: 60px;
-}
-
 @media (max-width: 768px) {
-  .cookie-table {
+  table {
     font-size: 0.875rem;
   }
 
-  .cookie-table th,
-  .cookie-table td {
+  table th,
+  table td {
     padding: 0.5rem;
   }
 }
