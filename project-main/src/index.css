@@ -41,61 +41,76 @@ body {
   flex-direction: column;
 }
 
-/* HEADER */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--white);
-  padding: 10px 40px;
-  width: 100%;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 12px 24px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  font-family: inherit;
 }
 
+/* Logo section */
 .logo-section {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.logo-section .logo {
+  background-color: #ffffff !important;
 }
 
 .logo {
-  background-color: #ffffff !important;
-  width: 60px;
-  height: 60px;
-  margin-right: 12px;
+  background-color: #fef3c7; /* Light orange or choose your preferred color */
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .site-title {
-  font-size: 26px;
-  font-weight: bold;
-  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ea580c;
+  margin: 0;
+  letter-spacing: -0.4px;
+  font-family: "Poppins", sans-serif;
 }
 
+/* Navigation links */
 .nav-links {
   display: flex;
   align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
-  gap: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
+/* Link and button styles */
 .nav-links a,
 .nav-links button {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  padding: 7px 10px;
-  border-radius: 8px;
-  background: none;
-  border: none;
+  all: unset;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: inherit;
 }
 
 .nav-links a:hover,
 .nav-links button:hover {
-  color: white;
-  background: #ff702d;
-  transform: translateY(-2px);
+  background: #f97316;
+  color: #fff;
 }
 
 /* HERO SECTION */

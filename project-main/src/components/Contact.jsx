@@ -120,7 +120,7 @@ const Contact = () => {
         <div className="faq-item">
           <div className="faq-question">How accurate are the AI recommendations?</div>
           <div className="faq-answer">
-            Our AI is trained on traditional Ayurvedic texts and validated by certified practitioners.
+            Our AI is trained on traditional Ayurvedic texts and validated by certified practitioners, providing guidance with high accuracy for general wellness.
           </div>
         </div>
 
@@ -134,7 +134,7 @@ const Contact = () => {
         <div className="faq-item">
           <div className="faq-question">How do I get started?</div>
           <div className="faq-answer">
-            Simply take our dosha assessment on the homepage for personalized recommendations.
+            Simply take our dosha assessment on the homepage to receive personalized recommendations based on your unique constitution.
           </div>
         </div>
       </div>
