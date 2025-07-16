@@ -6,7 +6,7 @@ import {
   Heart,
   MessageCircle,
   Calendar,
-} from "lucide-react"; 
+} from "lucide-react";
 
 const steps = [
   {
@@ -33,22 +33,25 @@ const steps = [
 
 const Journey = () => (
   <section className="journey">
-    <h2>Your Wellness Journey</h2>
-    <div className="journey-steps">
-      {steps.map((step, i) => {
-        const Icon = step.icon;
-        return (
-          <div className={`step step-${i}`} key={i}>
-            <div className="icon">
-              <Icon size={40} strokeWidth={2.5} />
+    <div className="journey-content">
+      <h2>Your Wellness Journey</h2>
+      <div className="journey-steps">
+        {steps.map((step, i) => {
+          const Icon = step.icon;
+          return (
+            <div className={`step step-${i}`} key={i}>
+              <div className="icon">
+                <Icon size={40} strokeWidth={2.5} />
+              </div>
+              <h4>{step.title}</h4>
+              <p>{step.desc}</p>
             </div>
-            <h4>{step.title}</h4>
-            <p>{step.desc}</p>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   </section>
 );
+
 
 export default Journey;

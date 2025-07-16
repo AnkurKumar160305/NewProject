@@ -8,9 +8,6 @@
   color: #333;
   background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 50%, #fbbf24 100%);
   font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 /* Main Content */
