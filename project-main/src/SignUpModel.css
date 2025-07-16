@@ -1,0 +1,156 @@
+/* Global overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeInOverlay 0.3s ease;
+}
+@keyframes fadeInOverlay { from { opacity: 0;} to { opacity: 1;} }
+
+/* Modal container */
+.signup-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  animation: slideDown 0.4s ease;
+}
+@keyframes slideDown { from { transform: translateY(-20px); opacity: 0;} to { transform: translateY(0); opacity:1;} }
+
+.signup-modal h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.close-btn:hover { color: #333; }
+
+/* Input fields */
+.input-with-icon {
+  margin-bottom: 20px;
+}
+.input-with-icon input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+.input-with-icon input:focus {
+  outline: none;
+  border-color: #f28b0d;
+  box-shadow: 0 0 0 3px rgba(242, 139, 13, 0.2);
+}
+
+/* Password field & toggle */
+.password-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+.password-container input {
+  width: 100%;
+  padding: 14px 50px 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 6px;
+  cursor: pointer;
+}
+.toggle-password:hover { color: #f28b0d; }
+
+/* Password validation */
+.password-error {
+  background: #fdecea;
+  color: #d9371d;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.checkbox-container input {
+  margin-right: 10px;
+}
+.checkbox-container label {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #f28b0d, #f57771);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f57771, #f28b0d);
+  transform: translateY(-2px);
+}
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.modal-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+.modal-footer p {
+  font-size: 0.95rem;
+  color: #555;
+}
+.modal-footer a {
+  color: #f28b0d;
+  font-weight: 500;
+  text-decoration: none;
+}
+.modal-footer a:hover {
+  text-decoration: underline;
+}
