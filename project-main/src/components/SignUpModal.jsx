@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react"; 
 import { useNavigate } from "react-router-dom";
 
 const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
@@ -13,7 +13,6 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
   const modalRef = useRef(null);
   const navigate = useNavigate();
 
-  // Close modal on ESC key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") onClose();
@@ -22,7 +21,6 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
-  // Close modal on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -33,7 +31,6 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClose]);
 
-  // Lock/unlock body scroll
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
@@ -41,7 +38,6 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     };
   }, [isOpen]);
 
-  // Password and form validation
   useEffect(() => {
     const { username, email, password, terms } = formData;
     const validPassword =
@@ -70,22 +66,22 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     onClose();
   };
 
+  const handleSignInRedirect = (e) => {
+    e.preventDefault();
+    onClose();
+    onSignInClick();
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div
-      className="modal-overlay active"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
+    <div className="modal-overlay active" onClick={(e) => {
+      if (e.target === e.currentTarget) onClose();
+    }}>
       <div className="signup-modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose} aria-label="Close modal">
-          ×
-        </button>
+        <button className="close-btn" onClick={onClose} aria-label="Close modal">×</button>
         <h2>Create Account</h2>
         <form onSubmit={handleSignUpSubmit}>
-          {/* Username */}
           <div className="input-with-icon">
             <input
               type="text"
@@ -97,7 +93,6 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
             <i className="input-icon" data-lucide="user"></i>
           </div>
 
-          {/* Email */}
           <div className="input-with-icon">
             <input
               type="email"
@@ -109,7 +104,6 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
             <i className="input-icon" data-lucide="mail"></i>
           </div>
 
-          {/* Password */}
           <div className="password-container">
             <input
               type={passwordVisible ? "text" : "password"}
@@ -128,14 +122,12 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
             </button>
           </div>
 
-          {/* Password Error */}
           {!isValid && formData.password.length > 0 && (
             <div className="password-error">
               Password must be 8+ characters, include uppercase, number, and symbol.
             </div>
           )}
 
-          {/* Terms Checkbox */}
           <div className="checkbox-container">
             <input
               type="checkbox"
@@ -143,30 +135,16 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               name="terms"
               onChange={handleInputChange}
             />
-            <label htmlFor="agreeTerms">
-              I agree to the terms and conditions
-            </label>
+            <label htmlFor="agreeTerms">I agree to the terms and conditions</label>
           </div>
 
-          {/* Submit */}
-          <button type="submit" disabled={!isValid}>
-            Register
-          </button>
+          <button type="submit" disabled={!isValid}>Register</button>
         </form>
 
-        {/* Footer */}
         <div className="modal-footer">
           <p>
             Already have an account?{" "}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                onSignInClick();
-              }}
-            >
-              Sign In
-            </a>
+            <a href="#" onClick={handleSignInRedirect}>Sign In</a>
           </p>
         </div>
       </div>

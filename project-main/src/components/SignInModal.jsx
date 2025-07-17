@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignInModal = ({ isOpen, onClose }) => {
+const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const modalRef = useRef(null);
   const navigate = useNavigate();
 
-  // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") onClose();
@@ -16,7 +15,6 @@ const SignInModal = ({ isOpen, onClose }) => {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
@@ -34,26 +32,26 @@ const SignInModal = ({ isOpen, onClose }) => {
   const handleSignInSubmit = (e) => {
     e.preventDefault();
     console.log("Sign In submitted:", formData);
-    navigate("/name-entry"); // Redirect after login
-    onClose(); // Close modal
+    navigate("/name-entry");
+    onClose();
+  };
+
+  const handleSignupRedirect = (e) => {
+    e.preventDefault();
+    onClose();
+    onSignUpClick();
   };
 
   if (!isOpen) return null;
 
   return (
-    <div
-      className="modal-overlay active"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose(); // Close only when clicking outside modal
-      }}
-    >
+    <div className="modal-overlay active" onClick={(e) => {
+      if (e.target === e.currentTarget) onClose();
+    }}>
       <div className="signin-modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose} aria-label="Close modal">
-          ×
-        </button>
+        <button className="close-btn" onClick={onClose} aria-label="Close modal">×</button>
         <h2>Welcome Back</h2>
         <form onSubmit={handleSignInSubmit}>
-          {/* Email Input */}
           <div className="input-with-icon">
             <input
               type="email"
@@ -65,7 +63,6 @@ const SignInModal = ({ isOpen, onClose }) => {
             <i className="input-icon" data-lucide="mail"></i>
           </div>
 
-          {/* Password Input */}
           <div className="password-container">
             <input
               type={passwordVisible ? "text" : "password"}
@@ -84,7 +81,27 @@ const SignInModal = ({ isOpen, onClose }) => {
             </button>
           </div>
 
+          <div className="checkbox-container">
+            <input type="checkbox" id="remember" name="remember" />
+            <label htmlFor="remember">Remember me</label>
+          </div>
+
           <button type="submit">Sign In</button>
+
+          <div className="modal-footer">
+            <p style={{ marginTop: "1.2rem" }}>
+              <a href="#" onClick={(e) => {
+                e.preventDefault();
+                alert("Redirect to password recovery");
+              }}>
+                Forgot password?
+              </a>
+            </p>
+            <p>
+              Don’t have an account?{" "}
+              <a href="#" onClick={handleSignupRedirect}>Sign Up</a>
+            </p>
+          </div>
         </form>
       </div>
     </div>

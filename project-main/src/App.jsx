@@ -17,7 +17,6 @@ import Quiz from "/src/components/Quiz.jsx";
 import PrivacyPolicy from "/src/components/PrivacyPolicy.jsx";
 import CookiesPolicy from "/src/components/CookiesPolicy.jsx";
 
-
 // Modals
 import SignInModal from "/src/components/SignInModal.jsx";
 import SignUpModal from "/src/components/SignUpModal.jsx";
@@ -25,9 +24,8 @@ import SignUpModal from "/src/components/SignUpModal.jsx";
 function App() {
   const [activeModal, setActiveModal] = useState(null);
 
-  // Close both modals
+  // Modal togglers
   const closeModals = () => setActiveModal(null);
-
   const onSignInClick = () => setActiveModal("signin");
   const onSignUpClick = () => setActiveModal("signup");
 
@@ -55,10 +53,18 @@ function App() {
 
       {/* Modals - only visible when triggered */}
       {activeModal === "signin" && (
-        <SignInModal isOpen={true} onClose={closeModals} />
+        <SignInModal
+          isOpen={true}
+          onClose={closeModals}
+          onSignUpClick={onSignUpClick} // ✅ required for "Sign Up" link
+        />
       )}
       {activeModal === "signup" && (
-        <SignUpModal isOpen={true} onClose={closeModals} onSignInClick={onSignInClick} />
+        <SignUpModal
+          isOpen={true}
+          onClose={closeModals}
+          onSignInClick={onSignInClick} // ✅ required for "Sign In" link
+        />
       )}
     </Router>
   );
