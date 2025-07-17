@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../SignInUp.css";
-import * as lucide from "lucide-react";
+import { Mail, Eye, EyeOff } from "lucide-react";
 
-const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
+const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const modalRef = useRef(null);
@@ -43,16 +43,28 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
     onClose();
     onSignUpClick();
   };
-  const Icon = passwordVisible ? lucide.EyeOff : lucide.Eye;
+
+  const handleForgotPasswordRedirect = (e) => {
+    e.preventDefault();
+    onClose();
+    onForgotPasswordClick();
+  };
 
   if (!isOpen) return null;
 
+  const PasswordIcon = passwordVisible ? EyeOff : Eye;
+
   return (
-    <div className="modal-overlay active" onClick={(e) => {
-      if (e.target === e.currentTarget) onClose();
-    }}>
+    <div
+      className="modal-overlay active"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
       <div className="signin-modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose} aria-label="Close modal">×</button>
+        <button className="close-btn" onClick={onClose} aria-label="Close modal">
+          ×
+        </button>
         <h2>Welcome Back</h2>
         <form onSubmit={handleSignInSubmit}>
           <div className="input-with-icon">
@@ -64,11 +76,11 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
               onChange={handleInputChange}
             />
             <div className="input-icon">
-              <lucide.Mail size={20} color="#666" />
+              <Mail size={20} color="#666" />
             </div>
           </div>
 
-          <div className="password-container">
+          <div className="input-with-icon password-container">
             <input
               type={passwordVisible ? "text" : "password"}
               name="password"
@@ -83,30 +95,31 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
               aria-label="Toggle password visibility"
             >
               <div className="input-icon">
-                <Icon size={20} color="#666" />
-            </div>
+                <PasswordIcon size={20} color="#666" />
+              </div>
             </button>
           </div>
 
           <div className="checkbox-container">
             <input type="checkbox" id="remember" name="remember" />
-            <label htmlFor="remember" className="custom-checkbox-label">Remember me</label>
+            <label htmlFor="remember" className="custom-checkbox-label">
+              Remember me
+            </label>
           </div>
 
-          <button type="submit">Sign In</button>
+          <button type="submit" className="primary-button">Sign In</button>
 
           <div className="modal-footer">
-            <p style={{ marginTop: "1.2rem" }}>
-              <a href="#" onClick={(e) => {
-                e.preventDefault();
-                alert("Redirect to password recovery");
-              }}>
+            <p style={{ marginTop: "1rem" }}>
+              <a href="#" onClick={handleForgotPasswordRedirect}>
                 Forgot password?
               </a>
             </p>
             <p>
               Don’t have an account?{" "}
-              <a href="#" onClick={handleSignupRedirect}>Sign Up</a>
+              <a href="#" onClick={handleSignupRedirect}>
+                Sign Up
+              </a>
             </p>
           </div>
         </form>

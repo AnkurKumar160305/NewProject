@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Layout Components
+// Layouts
 import Header from "/src/components/Header.jsx";
 import Footer from "/src/components/Footer.jsx";
 
@@ -20,21 +20,20 @@ import CookiesPolicy from "/src/components/CookiesPolicy.jsx";
 // Modals
 import SignInModal from "/src/components/SignInModal.jsx";
 import SignUpModal from "/src/components/SignUpModal.jsx";
+import ResetPasswordPopup from "/src/components/ResetPasswordPopup.jsx"; // ✅ Renamed
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);
 
-  // Modal togglers
   const closeModals = () => setActiveModal(null);
   const onSignInClick = () => setActiveModal("signin");
   const onSignUpClick = () => setActiveModal("signup");
+  const onForgotPasswordClick = () => setActiveModal("forgotPassword");
 
   return (
     <Router>
-      {/* Always visible Navbar */}
       <Header onSignInClick={onSignInClick} onSignUpClick={onSignUpClick} />
 
-      {/* Main Routes */}
       <Routes>
         <Route path="/" element={<LandingPage onStartAssessmentClick={onSignInClick} />} />
         <Route path="/about" element={<About />} />
@@ -48,22 +47,28 @@ function App() {
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
       </Routes>
 
-      {/* Always visible Footer */}
       <Footer />
 
-      {/* Modals - only visible when triggered */}
       {activeModal === "signin" && (
         <SignInModal
           isOpen={true}
           onClose={closeModals}
-          onSignUpClick={onSignUpClick} // ✅ required for "Sign Up" link
+          onSignUpClick={onSignUpClick}
+          onForgotPasswordClick={onForgotPasswordClick}
         />
       )}
+
       {activeModal === "signup" && (
         <SignUpModal
           isOpen={true}
           onClose={closeModals}
-          onSignInClick={onSignInClick} // ✅ required for "Sign In" link
+          onSignInClick={onSignInClick}
+        />
+      )}
+
+      {activeModal === "forgotPassword" && (
+        <ResetPasswordPopup
+          onClose={closeModals}
         />
       )}
     </Router>
