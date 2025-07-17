@@ -36,10 +36,10 @@ const ResetPasswordPopup = ({ onClose }) => {
           </div>
 
           <div className="reset-modal-buttons">
-            <button type="button" className="reset-btn grey" onClick={onClose}>
+            <button type="button" className="reset-button grey" onClick={onClose}>
               Cancel
             </button>
-            <button type="submit" className="reset-btn orange">
+            <button type="submit" className="reset-button orange">
               Send Reset Link
             </button>
           </div>

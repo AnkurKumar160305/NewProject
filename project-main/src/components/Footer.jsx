@@ -44,7 +44,9 @@ const Footer = () => (
     <div className="footer-bottom">
       © 2025 Tridosha AI. All rights reserved. |
       <Link to="/privacy-policy"> Privacy Policy</Link> |
-      <Link to="/cookies-policy"> Cookies Policy</Link>
+      <Link to="/terms"> Terms and Conditions</Link>|
+      <Link to="/cookies-policy"> Cookies Policy</Link> 
+    
     </div>
   </footer>
 );

@@ -16,11 +16,12 @@ import Result from "/src/components/Result.jsx";
 import Quiz from "/src/components/Quiz.jsx";
 import PrivacyPolicy from "/src/components/PrivacyPolicy.jsx";
 import CookiesPolicy from "/src/components/CookiesPolicy.jsx";
+import Terms from "/src/components/Terms.jsx";
 
 // Modals
 import SignInModal from "/src/components/SignInModal.jsx";
 import SignUpModal from "/src/components/SignUpModal.jsx";
-import ResetPasswordPopup from "/src/components/ResetPasswordPopup.jsx"; // ✅ Renamed
+import ResetPasswordPopup from "/src/components/ResetPasswordPopup.jsx"; 
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);
@@ -45,6 +46,7 @@ function App() {
         <Route path="/name-entry" element={<NameEntryPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
 
       <Footer />

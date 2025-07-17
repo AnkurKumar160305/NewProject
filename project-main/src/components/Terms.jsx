@@ -3,7 +3,7 @@ import { ArrowLeft, Leaf, Shield, Scale, Eye, Clock, Globe } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import '../Terms.css';
 
-const TermsAndConditions = () => {
+const Terms = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -40,26 +40,11 @@ const TermsAndConditions = () => {
 
   return (
   <div className="terms-container">
-      {/* Header */}
-      <header className="terms-header">
-        <div className="terms-header-content">
-          <div className="terms-header-nav">
-            <Link to="/" className="terms-back-link">
-              <ArrowLeft className="icon" style={{width: '1.25rem', height: '1.25rem'}} />
-              <span>Back to Home</span>
-            </Link>
-            <div className="terms-logo">
-              <Leaf className="terms-logo-icon" />
-              <span className="terms-logo-text">Ayurveda AI Guide</span>
-            </div>
-          </div>
-        </div>
-      </header>
       {/* Hero Section */}
       <section className="terms-hero">
         <div className="terms-hero-content">
           <div className={`terms-hero-animate ${!isVisible ? 'hidden' : ''}`}>
-            <h1 className="terms-title">
+            <h1 className="termstitle">
               Terms & Conditions
             </h1>
             <p className="terms-subtitle">
@@ -127,43 +112,10 @@ const TermsAndConditions = () => {
               </div>
             </div>
           </div>
-          <div className="terms-contact">
-            <h3 className="terms-contact-title">Questions About These Terms?</h3>
-            <p className="terms-contact-text">
-              If you have any questions or concerns about these Terms and Conditions, please don't hesitate to reach out to us.
-            </p>
-            <div className="terms-contact-buttons">
-              <a 
-                href="mailto:support@ayurvedaai.guide"
-                className="terms-contact-button terms-contact-button-primary"
-              >
-                Contact Support
-              </a>
-              <Link 
-                to="/"
-                className="terms-contact-button terms-contact-button-secondary"
-              >
-                Return to Homepage
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="terms-footer">
-        <div className="terms-footer-content">
-          <div className="terms-footer-logo">
-            <Leaf className="terms-footer-logo-icon" />
-            <span className="terms-footer-logo-text">Ayurveda AI Guide</span>
-          </div>
-          <p className="terms-footer-text">
-            Bridging ancient wisdom with modern technology for holistic wellness
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
 
-export default TermsAndConditions;
+export default Terms;
