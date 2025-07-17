@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"; 
 import { useNavigate } from "react-router-dom";
+import "../SignInUp.css";
+import * as lucide from "lucide-react";
 
 const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -71,6 +73,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     onClose();
     onSignInClick();
   };
+  const Icon = passwordVisible ? lucide.EyeOff : lucide.Eye;
 
   if (!isOpen) return null;
 
@@ -90,7 +93,9 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               required
               onChange={handleInputChange}
             />
-            <i className="input-icon" data-lucide="user"></i>
+            <div className="input-icon">
+                <lucide.User size={20} color="#666" />
+            </div>
           </div>
 
           <div className="input-with-icon">
@@ -101,7 +106,9 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               required
               onChange={handleInputChange}
             />
-            <i className="input-icon" data-lucide="mail"></i>
+            <div className="input-icon">
+              <lucide.Mail size={20} color="#666" />
+            </div>
           </div>
 
           <div className="password-container">
@@ -118,7 +125,9 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               onClick={togglePassword}
               aria-label="Toggle password visibility"
             >
-              <i data-lucide={passwordVisible ? "eye-off" : "eye"}></i>
+              <div className="input-icon">
+                <Icon size={20} color="#666"/>
+            </div>
             </button>
           </div>
 
@@ -135,7 +144,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               name="terms"
               onChange={handleInputChange}
             />
-            <label htmlFor="agreeTerms">I agree to the terms and conditions</label>
+            <label htmlFor="agreeTerms"className="custom-checkbox-label">I agree to the terms and conditions</label>
           </div>
 
           <button type="submit" disabled={!isValid}>Register</button>

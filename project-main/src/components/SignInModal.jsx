@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import "../SignInUp.css";
+import * as lucide from "lucide-react";
 
 const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -41,6 +43,7 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
     onClose();
     onSignUpClick();
   };
+  const Icon = passwordVisible ? lucide.EyeOff : lucide.Eye;
 
   if (!isOpen) return null;
 
@@ -60,7 +63,9 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
               required
               onChange={handleInputChange}
             />
-            <i className="input-icon" data-lucide="mail"></i>
+            <div className="input-icon">
+              <lucide.Mail size={20} color="#666" />
+            </div>
           </div>
 
           <div className="password-container">
@@ -77,13 +82,15 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick }) => {
               onClick={togglePassword}
               aria-label="Toggle password visibility"
             >
-              <i data-lucide={passwordVisible ? "eye-off" : "eye"}></i>
+              <div className="input-icon">
+                <Icon size={20} color="#666" />
+            </div>
             </button>
           </div>
 
           <div className="checkbox-container">
             <input type="checkbox" id="remember" name="remember" />
-            <label htmlFor="remember">Remember me</label>
+            <label htmlFor="remember" className="custom-checkbox-label">Remember me</label>
           </div>
 
           <button type="submit">Sign In</button>
