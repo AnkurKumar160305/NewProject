@@ -3,14 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .aboutbody {
+  background-color: #fff8f0;
   line-height: 1.6;
   color: #333;
   font-family: "Segoe UI", sans-serif;
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 0;
   text-align: center;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .AboutHead {
@@ -18,12 +26,15 @@
   font-weight: bold;
   color: #333 !important;
   margin-bottom: 20px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .subheading {
   font-size: 18px;
   color: #666;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto 50px auto;
 }
 
@@ -33,6 +44,9 @@
   justify-content: center;
   gap: 30px;
   margin-bottom: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box {
@@ -45,6 +59,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
+
 .box:hover {
   transform: translateY(-5px);
 }

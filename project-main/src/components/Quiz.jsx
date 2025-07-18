@@ -121,7 +121,7 @@ function Quiz() {
       <div className="quiz-content">
         <h1 className="quiz-title">Dosha Assessment</h1>
         <p className="quiz-subtitle">
-          Hi {username}! Answer these questions to discover your unique constitution.
+          Hi {username || "Friend"}! Answer these questions to discover your unique constitution.
         </p>
 
         <div className="quiz-progress-info">
@@ -176,6 +176,7 @@ function Quiz() {
         </div>
       </div>
     </div>
+
   );
 }
 
