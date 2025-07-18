@@ -1,82 +1,70 @@
-/* === SECTION CONTAINER === */
+/* Make section full screen */
 .doshas-section {
-  width: 100%;
-  background: #fffef9;
+  width: 100vw;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 27px 20px;
   box-sizing: border-box;
 }
 
-/* === TITLE === */
+/* Section title styling */
 .doshas-title {
-  font-size: 2.5rem;
-  color: #3b2e2e;
-  font-weight: 700;
-  margin-bottom: 40px;
-  font-family: 'Quicksand', sans-serif;
+  margin-top: 17px;
+  font-size: 2rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-/* === CARD CONTAINER === */
+/* Layout for cards */
 .dosha-cards {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
-  max-width: 1400px;
-  width: 100%;
+  justify-content: center;
 }
 
-/* === CARD === */
+/* Individual card styles */
 .card {
-  background-color: #fff;
-  border-radius: 18px;
-  padding: 30px 20px;
-  width: 260px;
-  min-height: 300px;
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  font-family: 'Work Sans', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* === EMOJI === */
 .card .emoji {
-  font-size: 3rem;
-  margin-bottom: 16px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-/* === TEXT === */
 .card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
   color: #ffffff;
-  font-weight: 600;
 }
 
 .card p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: #fdfdfd;
+  font-style: normal;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
 .card span {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #fdfdfd;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
 }
-
-/* === COLOR THEMES === */
 .card.vata {
   background: linear-gradient(135deg, #2d70ab, #76cde8);
 }
@@ -87,16 +75,4 @@
 
 .card.kapha {
   background: linear-gradient(135deg, #33b75f, #3cc7ad);
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  .doshas-title {
-    font-size: 2rem;
-  }
 }

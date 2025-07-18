@@ -1,12 +1,11 @@
 import React from "react";
-import "../About.css";
+import "../about.css";
 import * as lucide from "lucide-react";
 
 const About = () => {
   return (
-    <>
-
-      <main>
+    <div className="aboutbody">
+      <div className="about-container">
         <h1 className="AboutHead">About Tridosha AI</h1>
         <p className="subheading">
           We're revolutionizing wellness by combining 5,000 years of Ayurvedic
@@ -30,7 +29,7 @@ const About = () => {
             </div>
             <h3>Our Vision</h3>
             <p>
-             A world where everyone has access to personalized wellness guidance rooted in time-tested Ayurvedic principles, empowering individuals to live balanced, healthy lives in harmony with their unique constitution.
+              A world where everyone has access to personalized wellness guidance rooted in time-tested Ayurvedic principles, empowering individuals to live balanced, healthy lives in harmony with their unique constitution.
             </p>
           </div>
         </section>
@@ -73,14 +72,14 @@ const About = () => {
           <h3>Our Story</h3>
           <p>
             Tridosha AI was born from a simple observation: while Ayurveda offers profound wisdom for health and wellness, accessing personalized guidance has traditionally required extensive knowledge or expensive consultations.
-
-Our team of Ayurvedic practitioners, AI researchers, and wellness enthusiasts came together with a shared vision to democratize access to this ancient wisdom through modern technology. By combining machine learning with traditional Ayurvedic principles, we’ve created a platform that provides personalized wellness based on your unique constitution and current state of health.
-
-Today, Tridosha AI serves thousands of users worldwide, helping them discover their optimal path to wellness through the timeless wisdom of Ayurveda
+            <br /><br />
+            Our team of Ayurvedic practitioners, AI researchers, and wellness enthusiasts came together with a shared vision to democratize access to this ancient wisdom through modern technology. By combining machine learning with traditional Ayurvedic principles, we’ve created a platform that provides personalized wellness based on your unique constitution and current state of health.
+            <br /><br />
+            Today, Tridosha AI serves thousands of users worldwide, helping them discover their optimal path to wellness through the timeless wisdom of Ayurveda.
           </p>
         </section>
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
 

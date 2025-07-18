@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Layout Components
+// Layouts
 import Header from "/src/components/Header.jsx";
 import Footer from "/src/components/Footer.jsx";
 
@@ -14,41 +14,27 @@ import NameEntryPage from "/src/components/NameEntryPage.jsx";
 import Dashboard from "/src/components/Dashboard.jsx";
 import Result from "/src/components/Result.jsx";
 import Quiz from "/src/components/Quiz.jsx";
+import PrivacyPolicy from "/src/components/PrivacyPolicy.jsx";
+import CookiesPolicy from "/src/components/CookiesPolicy.jsx";
+import Terms from "/src/components/Terms.jsx";
 
 // Modals
 import SignInModal from "/src/components/SignInModal.jsx";
 import SignUpModal from "/src/components/SignUpModal.jsx";
-
-// Static Page Components
-const PrivacyPolicy = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Privacy Policy</h1>
-    <p>This is where your privacy policy content goes.</p>
-  </div>
-);
-
-const CookiesPolicy = () => (
-  <div style={{ padding: "2rem" }}>
-    <h1>Cookies Policy</h1>
-    <p>This is where your cookies policy content goes.</p>
-  </div>
-);
+import ResetPasswordPopup from "/src/components/ResetPasswordPopup.jsx"; 
 
 function App() {
   const [activeModal, setActiveModal] = useState(null);
 
-  // Close both modals
   const closeModals = () => setActiveModal(null);
-
   const onSignInClick = () => setActiveModal("signin");
   const onSignUpClick = () => setActiveModal("signup");
+  const onForgotPasswordClick = () => setActiveModal("forgotPassword");
 
   return (
     <Router>
-      {/* Always visible Navbar */}
       <Header onSignInClick={onSignInClick} onSignUpClick={onSignUpClick} />
 
-      {/* Main Routes */}
       <Routes>
         <Route path="/" element={<LandingPage onStartAssessmentClick={onSignInClick} />} />
         <Route path="/about" element={<About />} />
@@ -60,17 +46,32 @@ function App() {
         <Route path="/name-entry" element={<NameEntryPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
 
-      {/* Always visible Footer */}
       <Footer />
 
-      {/* Modals - only visible when triggered */}
       {activeModal === "signin" && (
-        <SignInModal isOpen={true} onClose={closeModals} />
+        <SignInModal
+          isOpen={true}
+          onClose={closeModals}
+          onSignUpClick={onSignUpClick}
+          onForgotPasswordClick={onForgotPasswordClick}
+        />
       )}
+
       {activeModal === "signup" && (
-        <SignUpModal isOpen={true} onClose={closeModals} onSignInClick={onSignInClick} />
+        <SignUpModal
+          isOpen={true}
+          onClose={closeModals}
+          onSignInClick={onSignInClick}
+        />
+      )}
+
+      {activeModal === "forgotPassword" && (
+        <ResetPasswordPopup
+          onClose={closeModals}
+        />
       )}
     </Router>
   );

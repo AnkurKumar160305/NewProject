@@ -1,5 +1,5 @@
 /* Root font setting for smooth rendering */
-body {
+.body {
   font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -8,7 +8,7 @@ body {
 }
 
 /* Header */
-.site-header {
+.site-headermain {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,19 +22,20 @@ body {
 }
 
 /* Logo section */
-.logo-section {
+.logo-sectionmain {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.logo-section .logo {
+.logo-sectionmain .logomain {
   background-color: #ffffff !important;
 }
 
-.logo {
+.logomain {
   background-color: #fef3c7;
   border-radius: 50%;
+  margin-bottom: 0 !important;
   width: 48px !important;
   height: 48px !important;
   display: flex;
@@ -42,7 +43,7 @@ body {
   justify-content: center;
 }
 
-.site-title {
+.site-titlemain {
   font-size: 24px;
   font-weight: 600 !important;
   color: #ea580c;

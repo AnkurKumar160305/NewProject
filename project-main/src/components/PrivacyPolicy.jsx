@@ -1,26 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Leaf } from "lucide-react";
+import "../PrivacyPolicy.css"; // Import the custom CSS
 
 const PrivacyPolicy = () => {
   return (
-    <div className="privacy-container">
-      {/* Header */}
-      <header className="privacy-header">
-        <div className="logo">
-          <img src="/images/leaf.png" alt="Tridosha Logo" className="logo-img" />
-          <span className="logo-text">Tridosha AI</span>
-        </div>
+    <div className="privacy-page">
+      <div className="privacy-header">
         <h1>Privacy Policy</h1>
-        <p className="last-updated">Last updated: January 2025</p>
-      </header>
+        <p className="privacy-updated">Last updated: January 2025</p>
+      </div>
 
-      {/* Content */}
-      <main className="privacy-content">
+      <div className="privacy-card">
         <section>
           <h2>Introduction</h2>
-          <p>
-            Welcome to Tridosha AI. We respect your privacy and are committed to protecting your personal data.
-          </p>
+          <p>Welcome to Tridosha AI. We respect your privacy and are committed to protecting your personal data.</p>
         </section>
 
         <section>
@@ -37,7 +31,6 @@ const PrivacyPolicy = () => {
 
         <section>
           <h2>How We Use Your Information</h2>
-          <p>We use the information we collect to:</p>
           <ul>
             <li>Provide personalized Ayurvedic wellness recommendations</li>
             <li>Improve our AI algorithms and services</li>
@@ -54,7 +47,6 @@ const PrivacyPolicy = () => {
 
         <section>
           <h2>Data Sharing</h2>
-          <p>We do not sell or share your personal information except:</p>
           <ul>
             <li>To provide services you’ve requested</li>
             <li>When required by law</li>
@@ -83,37 +75,18 @@ const PrivacyPolicy = () => {
 
         <section>
           <h2>Changes to This Policy</h2>
-          <p>
-            We may update this privacy policy occasionally. If we do, we’ll update the “Last updated” date above.
-          </p>
+          <p>We may update this privacy policy occasionally. If we do, we’ll update the “Last updated” date above.</p>
         </section>
 
-        <section className="contact-info">
+        <section className="privacy-contact">
           <h3>Contact Us</h3>
           <p>If you have any questions:</p>
           <p>
-            Email:{" "}
-            <a href="mailto:privacy@Tridosha.ai">privacy@Tridosha.ai</a>
-            <br />
+            Email: <a href="mailto:privacy@Tridosha.ai">privacy@Tridosha.ai</a><br />
             Phone: +1 (555) 123-4567
           </p>
         </section>
-      </main>
-
-      {/* Back link */}
-      <div className="back-link">
-        <Link to="/" className="link-button">
-          <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Home
-        </Link>
       </div>
-
-      {/* Footer */}
-      <footer className="footer">
-        <p>&copy; 2025 Tridosha AI. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

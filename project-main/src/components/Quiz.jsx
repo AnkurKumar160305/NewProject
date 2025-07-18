@@ -115,6 +115,7 @@ function Quiz({ username }) {
 
   return (
     <div className="quiz-container">
+     <div className="quiz-content">
       <h1 className="quiz-title">Dosha Assessment</h1>
       <p className="quiz-subtitle">
         Hi {username || "Friend"}! Answer these questions to discover your unique constitution.
@@ -170,6 +171,7 @@ function Quiz({ username }) {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

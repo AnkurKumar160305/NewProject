@@ -1,48 +1,65 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram } from "lucide-react";
+
 import leaf from "../assets/leaf.png";
-import "../Footer.css";
+import '../Footer.css';
 
 const Footer = () => (
-  <footer className="footer">
-    <div className="footer-content">
+  <footer style={{ backgroundColor: "#2d3d2f", color: "white", padding: "3px 20px" }}>
 
-      {/* Column 1: Brand */}
-      <div className="footer-col brand-col">
+    <div className="footer-content">
+      <div className="footer-col">
         <div className="brand">
           <img className="flogo" src={leaf} alt="Tridosha logo" />
-          <h2 className="brand-title">Tridosha AI</h2>
+          <h2>Tridosha AI</h2>
         </div>
         <p className="brandpara">
-          Combining 5,000 years of Ayurvedic wisdom with modern AI to provide personalized wellness guidance.
+          Combining 5,000 years of Ayurvedic wisdom with modern AI to
+          provide personalized wellness guidance for optimal health and
+          balance.
         </p>
-      </div>
-
-      {/* Column 2: Quick Links without ul/li */}
-      <div className="footer-col links-col">
-        <h3 className="links-heading">Quick Links</h3>
-        <div className="quick-links">
-          <Link className="footer-link" to="/">Home</Link>
-          <Link className="footer-link" to="/learn">Learn Ayurveda</Link>
-          <Link className="footer-link" to="/about">About Us</Link>
-          <Link className="footer-link" to="/contact">Contact</Link>
+        <div style={{ marginTop: "15px" }}>
+          <a href="#" style={{ marginRight: "10px" }}>
+            <Facebook />
+          </a>
+          <a href="#" style={{ marginRight: "10px" }}>
+            <Twitter />
+          </a>
+          <a href="#" style={{ marginRight: "10px" }}>
+            <Instagram />
+          </a>
         </div>
       </div>
 
-      {/* Column 3: Contact */}
-      <div className="footer-col contact-col">
-        <h3 className="contact-heading">Contact</h3>
-        <p className="ficon"><Mail size={17} /> support@Tridosha.ai</p>
-        <p className="ficon"><Phone size={17} /> +1 (555) 123-4567</p>
-        <p className="ficon"><MapPin size={17} /> 123 Wellness Street, Mindful City</p>
+      {/* Quick links */}
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/learn">Learn Ayurveda</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div className="Contactfooter">
+        <h3 className="con">Contact</h3>
+        <p className="ficon"><Mail size={17} style={{ marginRight: "8px" }} /> support@Tridosha.ai</p>
+        <p className="ficon"><Phone size={17} style={{ marginRight: "8px" }} /> +1 (555) 123-4567</p>
+        <p className="ficon"><MapPin size={17} style={{ marginRight: "8px" }} /> 123 Wellness Street, Mindful City</p>
       </div>
     </div>
 
+    {/* Footer Bottom */}
     <div className="footer-bottom">
       © 2025 Tridosha AI. All rights reserved. |
       <Link to="/privacy-policy"> Privacy Policy</Link> |
+      <Link to="/terms"> Terms and Conditions</Link>|
       <Link to="/cookies-policy"> Cookies Policy</Link>
+
     </div>
   </footer>
 );

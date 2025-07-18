@@ -1,5 +1,4 @@
 :root {
-  --bg-lighter: #fcf4e8;
   --orange: #f97316;
   --orange-dark: #f57c00;
   --white: #ffffff;
@@ -41,7 +40,7 @@ body {
   flex-direction: column;
 }
 
-.site-header {
+.site-headermain {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,31 +54,32 @@ body {
 }
 
 /* Logo section */
-.logo-section {
+.logo-sectionmain {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.logo-section .logo {
+.logo-sectionmain .logomain {
   background-color: #ffffff !important;
 }
 
-.logo {
-  background-color: #fef3c7; 
+.logomain {
+  background-color: #fef3c7;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  margin-bottom: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.site-title {
+.site-titlemain {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600 !important;
   color: #ea580c;
-  margin: 0;
+  margin-bottom: 0 !important;
   letter-spacing: -0.4px;
   font-family: "Poppins", sans-serif;
 }
@@ -234,6 +234,83 @@ h1 {
   font-size: 0.8rem;
   color: var(--gray-text);
   margin: 0;
+} /* Make section full screen */
+.doshas-section {
+  width: 100vw;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 27px 20px;
+  box-sizing: border-box;
+}
+
+/* Section title styling */
+.doshas-title {
+  margin-top: 17px;
+  font-size: 2rem;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Layout for cards */
+.dosha-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Individual card styles */
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  width: 270px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.card p {
+  font-style: normal;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.card span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.card.vata {
+  background: linear-gradient(135deg, #2d70ab, #76cde8);
+}
+
+.card.pitta {
+  background: linear-gradient(135deg, #f28b0d, #f57771);
+}
+
+.card.kapha {
+  background: linear-gradient(135deg, #33b75f, #3cc7ad);
 }
 /* Full width + optional full height */
 .journey {
@@ -336,7 +413,9 @@ h1 {
 }
 
 .brand h2 {
+  text-decoration: none;
   margin: 0;
+  color: #ffffff;
   font-size: 1.8rem;
 }
 
@@ -349,12 +428,13 @@ h1 {
 
 .footer-content h3 {
   font-size: 1.2rem;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
 .footer-content ul {
   list-style: none;
-  padding-left: 190px;
+  padding-left: 0;
 }
 
 .footer-content ul li {
@@ -369,7 +449,9 @@ h1 {
 .footer-content a:hover {
   text-decoration: underline;
 }
-
+.Contactfooter {
+  padding-left: 130px !important;
+}
 .ficon {
   display: flex;
   align-items: center;
@@ -413,11 +495,5 @@ h1 {
   .journey-steps {
     flex-direction: column;
     align-items: center;
-  }
-
-  .signin-modal,
-  .signup-modal {
-    margin: 1rem;
-    max-width: calc(100% - 2rem);
   }
 }

@@ -1,264 +1,380 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&family=Work+Sans&display=swap');
+/* General Body and Font Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
-
-/* === GLOBAL CONTAINER === */
-.hero {
-  margin: 80px 10%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  font-family: 'Segoe UI', sans-serif;
+.learn {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to bottom right,
+    #e0f7fa,
+    #bbdefb
+  ); /* Light teal to light blue gradient */
   color: #333;
+  line-height: 1.6;
 }
 
-/* === NAVIGATION BUTTONS (Enhanced) === */
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Hero Section */
+.hero-learn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Navigation Buttons (box1) */
 .box1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
-  background: linear-gradient(to right, #fff9f3, #ffe8d0);
-  padding: 20px 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
+  gap: 15px;
+  padding: 15px 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .box1 button {
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: 500;
-  background: white;
-  color: #333;
-  border: 2px solid #ff8a3d;
-  border-radius: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(255, 138, 61, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  background-color: #e0f2f7; /* Light teal */
+  color: #00796b; /* Darker teal */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .box1 button:hover {
-  background-color: #ff8a3d;
-  color: white;
+  background-color: #b2dfdb; /* Slightly darker teal on hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 138, 61, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.box1 button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 138, 61, 0.4);
-}
-
-/* Optional: Active Button Styling */
 .box1 button.active {
-  background-color: #ff8a3d;
-  color: white;
+  background-color: #00796b; /* Active button color */
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
 
-.page1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  animation: fadeInIntro 0.6s ease;
-}
-
-.intro-box {
-  background: linear-gradient(135deg, #fbe7c6, #f3c98b);
-  border-radius: 20px;
-  padding: 50px 40px;
-  text-align: center;
-  max-width: 950px;
+/* Section Containers (page1, dosha, page3, firstdiv) */
+.page1,
+.page2,
+.page3,
+.firstdiv {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   width: 100%;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
-.intro-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+/* Introduction Section (page1 specifics) */
+.page1 .box2 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.intro-logo {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 25px;
-  background: linear-gradient(135deg, #f4a261, #e76f51);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.page1 .logo1 img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
-.intro-logo img {
-  width: 42px;
-  height: 42px;
-}
-
-.intro-content h1 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 36px;
-  color: #5a2e14;
+.page1 h1 {
+  font-size: 3.5rem;
+  color: #004d40; /* Dark teal */
   margin-bottom: 10px;
-  letter-spacing: 0.5px;
+  line-height: 1.1;
 }
 
-.intro-content h3 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 22px;
-  color: #6b3e22;
-  font-weight: 500;
+.page1 h3 {
+  font-size: 1.8rem;
+  color: #1a237e; /* Dark blue */
   margin-bottom: 25px;
 }
 
-.intro-content p {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #4d3b27;
-  max-width: 750px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.4);
-}
-
-/* Soft entry animation */
-@keyframes fadeInIntro {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === DOSHA SECTION WRAPPER === */
-.dosha {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 40px 0;
-}
-
-/* === DOSHA SECTION HEADER (.over) === */
-.over {
-  background: linear-gradient(to right, #fff0e1, #ffe2cc);
-  padding: 40px 30px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
-  animation: fadeIn 0.5s ease-out;
-}
-
-.over:hover {
-  transform: translateY(-3px);
-}
-
-.over h2 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: #e97126;
-  letter-spacing: 1px;
-}
-
-.over p {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.6;
+.page1 p {
+  font-size: 1.1rem;
+  color: #555;
   max-width: 700px;
   margin: 0 auto;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.intro-section {
+  margin-top: 50px;
+}
+
+.c-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .c-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.intro-card {
+  background-color: #f0f4c3; /* Light yellow-green */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #cddc39;
+}
 
-/* === DOSHA CARDS CONTAINER IN ROW === */
-.dosha-row {
+.intro-card h2 {
+  font-size: 2rem;
+  color: #33691e; /* Dark green */
+  margin-bottom: 15px;
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
+  align-items: center;
+}
+
+.intro-card h2 span {
+  font-size: 2.5rem;
+  margin-right: 10px;
+}
+
+.intro-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.intro-card ul li {
+  margin-bottom: 8px;
+}
+
+.intro-elements {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.intro-elements h2 {
+  font-size: 2.5rem;
+  color: #6a1b9a; /* Dark purple */
+  margin-bottom: 30px;
+}
+
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
   justify-content: center;
 }
 
-/* === INDIVIDUAL DOSHA CARD === */
-.vata, .pitta, .kapha {
-  flex: 1 1 300px; /* Responsive width */
-  max-width: 350px;
-  min-width: 260px;
-  padding: 25px;
-  border-radius: 14px;
-  color: white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.vata:hover, .pitta:hover, .kapha:hover {
-  transform: translateY(-6px);
-}
-
-.vata {
-  background: linear-gradient(to right, #a5d8ff, #199fb3);
-}
-.pitta {
-  background: linear-gradient(to right, #fca878, #f25042);
-}
-.kapha {
-  background: linear-gradient(to right, #a8e6cf, #56ab91);
-}
-
-/* === DOSHA CARD HEADER === */
-.logoname {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.logoimg {
-  font-size: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8px;
+.element-item {
+  background-color: #f3e5f5; /* Light purple */
+  padding: 20px 10px;
   border-radius: 10px;
-}
-
-.name {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ce93d8;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.badiheading {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.vata p, .pitta p, .kapha p {
-  font-size: 15.5px;
-  line-height: 1.6;
+.element-item div:first-child {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
+.element-item div:nth-child(2) {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
 
-/* === PRINCIPLES SECTION === */
+.element-item div:last-child {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Doshas Section (dosha specifics) */
+.page2 .over {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page2 .over h2 {
+  font-size: 3.5rem;
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.page2 .over p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.vata-learn,
+.pitta-learn,
+.kapha-learn {
+  background-color: #e3f2fd; /* Light blue */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.pitta-learn {
+  background-color: #ffebee; /* Light red */
+}
+
+.kapha-learn {
+  background-color: #e8f5e9; /* Light green */
+}
+
+@media (min-width: 768px) {
+  .vata-learn,
+  .pitta-learn,
+  .kapha-learn {
+    flex-direction: row;
+  }
+}
+
+.logoname-learn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 200px; /* Ensure logo and name stay together */
+}
+
+.logoname-learn .logoimg-learn {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2196f3; /* Blue for Vata */
+}
+
+.pitta-learn .logoname-learn .logoimg-learn {
+  color: #f44336; /* Red for Pitta */
+}
+
+.kapha-learn .logoname-learn .logoimg-learn {
+  color: #4caf50; /* Green for Kapha */
+}
+
+.logoname-learn .doshname .badiheading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1565c0; /* Darker blue for Vata */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pitta-learn .logoname-learn .doshname .badiheading {
+  color: #d32f2f; /* Darker red for Pitta */
+}
+
+.kapha-learn .logoname-learn .doshname .badiheading {
+  color: #2e7d32; /* Darker green for Kapha */
+}
+
+.logoname-learn .doshname span:last-child {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.zaruri {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .zaruri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dibba1,
+.dibba2 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+}
+
+.zaruri .chotiheading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.zaruri .qsub {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.zaruri ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.zaruri ul li {
+  margin-bottom: 5px;
+}
+
+/* Principles Section (page3 specifics) */
 .page3 {
   display: flex;
   flex-direction: column;
@@ -266,111 +382,298 @@
 }
 
 .page3 .buttons {
-  background-color: #fff2e5;
-  border: 2px solid #ff9d5c;
-  padding: 12px 20px;
+  width: 100%;
+  padding: 18px 25px;
+  border: none;
   border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #e3f2fd; /* Light blue */
+  color: #1565c0; /* Darker blue */
   text-align: left;
-  color: #333;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .page3 .buttons:hover {
-  background-color: #ff9d5c;
-  color: white;
+  background-color: #bbdefb; /* Slightly darker blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.agni, .ama, .ojas, .dinacharya {
-  background-color: #fffef8;
-  padding: 20px;
-  border-left: 5px solid #ff9d5c;
+.page3 .buttons.active {
+  background-color: #1565c0; /* Active button color */
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.agni,
+.ama,
+.ojas,
+.daily {
+  background-color: #e3f2fd; /* Light blue */
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  animation: fadeIn 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #bbdefb;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-//* === PRACTICE SECTION === */
-.page4 {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 40px 0;
-}
-
-/* Outer Box */
-.firstdiv {
-  background: linear-gradient(135deg, #fffbe6, #fef5d3);
-  border-radius: 16px;
-  padding: 40px 35px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  max-width: 850px;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-}
-
-.firstdiv:hover {
-  transform: translateY(-5px);
-}
-
-/* Left Content Box */
-.leftdibba h2 {
-  font-size: 30px;
+.agni p,
+.ama p,
+.ojas p,
+.daily p {
+  font-size: 1.1rem;
+  color: #555;
   margin-bottom: 20px;
-  color: #e6b100;
-  font-family: 'Georgia', serif;
+}
+
+.agni .listbox {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .agni .listbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.agni .listbox1,
+.agni .listbox2 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+}
+
+.agni .badiheading,
+.ama .badiheading,
+.ojas .badiheading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.ama ul,
+.ojas ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.ama ul li,
+.ojas ul li {
+  margin-bottom: 5px;
+}
+
+.daily .timebox {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   text-align: center;
 }
 
-.leftdibba p {
-  font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-  text-align: justify;
+@media (min-width: 768px) {
+  .daily .timebox {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* List Style */
-.leftdibba ul {
-  padding-left: 0;
-  margin: 20px 0;
-  list-style: none;
+.daily .timebox1,
+.daily .timebox2,
+.daily .timebox3 {
+  background-color: #f3e5f5; /* Light purple */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ce93d8;
 }
 
-.leftdibba li {
-  margin-bottom: 12px;
-  font-size: 16.5px;
-  line-height: 1.6;
+.daily .timebox span:first-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6a1b9a; /* Dark purple */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.daily .timebox span:nth-child(2) {
+  font-size: 1rem;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.daily .timebox span:last-child {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Practice Section (page4 specifics) */
+.firstdiv {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.leftdibba li::before {
-  content: "🍃";
-  font-size: 18px;
-  line-height: 1.4;
+.firstdiv1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .firstdiv {
-    padding: 25px 20px;
-  }
-
-  .leftdibba h2 {
-    font-size: 24px;
-  }
-
-  .leftdibba p,
-  .leftdibba li {
-    font-size: 15px;
+@media (min-width: 768px) {
+  .firstdiv1 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.leftdibba,
+.rightdibba {
+  background-color: #fffde7; /* Very light yellow */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #fff9c4;
+}
+
+.leftdibba .badiheading,
+.rightdibba .badiheading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.leftdibba p,
+.rightdibba p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.rightdibba .pill {
+  display: inline-block;
+  background-color: #ede7f6; /* Light purple */
+  color: #4527a0; /* Dark purple */
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.rightdibba .text-content {
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+.firstdiv2 {
+  background-color: #fbe9e7; /* Light orange-red */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ffccbc;
+}
+
+.firstdiv2 .badiheading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.firstdiv2 .chotiheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d84315; /* Dark orange */
+  margin-right: 10px;
+  display: inline-block;
+  margin-bottom: 10px; /* For spacing between lines */
+}
+
+.firstdiv2 span:not(.chotiheading) {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.secondiv {
+  background-color: #e0f2f7; /* Light teal */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #b2dfdb;
+}
+
+.secondiv .badiheading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+}
+
+.secondcontent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+@media (min-width: 768px) {
+  .secondcontent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.secondiv1,
+.secondiv2,
+.secondiv3 {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+}
+
+.secondiv1 .chotiheading,
+.secondiv2 .chotiheading,
+.secondiv3 .chotiheading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.secondiv1 ul,
+.secondiv2 ul,
+.secondiv3 ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.secondiv1 ul li,
+.secondiv2 ul li,
+.secondiv3 ul li {
+  margin-bottom: 5px;
+}
+
+/* Specific colors for seasonal headings */
+.secondiv1 .chotiheading {
+  color: #1a237e;
+} /* Dark blue */
+.secondiv2 .chotiheading {
+  color: #b71c1c;
+} /* Dark red */
+.secondiv3 .chotiheading {
+  color: #01579b;
+} /* Darker blue */

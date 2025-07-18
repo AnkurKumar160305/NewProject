@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import "../SignInUp.css";
+import { Mail, Eye, EyeOff } from "lucide-react";
 
-const SignInModal = ({ isOpen, onClose }) => {
+const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const modalRef = useRef(null);
   const navigate = useNavigate();
 
-  // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") onClose();
@@ -16,7 +17,6 @@ const SignInModal = ({ isOpen, onClose }) => {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
@@ -34,17 +34,31 @@ const SignInModal = ({ isOpen, onClose }) => {
   const handleSignInSubmit = (e) => {
     e.preventDefault();
     console.log("Sign In submitted:", formData);
-    navigate("/name-entry"); // Redirect after login
-    onClose(); // Close modal
+    navigate("/name-entry");
+    onClose();
+  };
+
+  const handleSignupRedirect = (e) => {
+    e.preventDefault();
+    onClose();
+    onSignUpClick();
+  };
+
+  const handleForgotPasswordRedirect = (e) => {
+    e.preventDefault();
+    onClose();
+    onForgotPasswordClick();
   };
 
   if (!isOpen) return null;
+
+  const PasswordIcon = passwordVisible ? EyeOff : Eye;
 
   return (
     <div
       className="modal-overlay active"
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose(); // Close only when clicking outside modal
+        if (e.target === e.currentTarget) onClose();
       }}
     >
       <div className="signin-modal" ref={modalRef}>
@@ -53,7 +67,6 @@ const SignInModal = ({ isOpen, onClose }) => {
         </button>
         <h2>Welcome Back</h2>
         <form onSubmit={handleSignInSubmit}>
-          {/* Email Input */}
           <div className="input-with-icon">
             <input
               type="email"
@@ -62,11 +75,12 @@ const SignInModal = ({ isOpen, onClose }) => {
               required
               onChange={handleInputChange}
             />
-            <i className="input-icon" data-lucide="mail"></i>
+            <div className="input-icon">
+              <Mail size={20} color="#666" />
+            </div>
           </div>
 
-          {/* Password Input */}
-          <div className="password-container">
+          <div className="input-with-icon password-container">
             <input
               type={passwordVisible ? "text" : "password"}
               name="password"
@@ -80,11 +94,34 @@ const SignInModal = ({ isOpen, onClose }) => {
               onClick={togglePassword}
               aria-label="Toggle password visibility"
             >
-              <i data-lucide={passwordVisible ? "eye-off" : "eye"}></i>
+              <div className="input-icon">
+                <PasswordIcon size={20} color="#666" />
+              </div>
             </button>
           </div>
 
-          <button type="submit">Sign In</button>
+          <div className="checkbox-container">
+            <input type="checkbox" id="remember" name="remember" />
+            <label htmlFor="remember" className="custom-checkbox-label">
+              Remember me
+            </label>
+          </div>
+
+          <button type="submit" className="primary-button">Sign In</button>
+
+          <div className="modal-footer">
+            <p style={{ marginTop: "1rem" }}>
+              <a href="#" onClick={handleForgotPasswordRedirect}>
+                Forgot password?
+              </a>
+            </p>
+            <p>
+              Don’t have an account?{" "}
+              <a href="#" onClick={handleSignupRedirect}>
+                Sign Up
+              </a>
+            </p>
+          </div>
         </form>
       </div>
     </div>

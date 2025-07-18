@@ -1,130 +1,83 @@
-.footer {
-  background-color: #2d3d2f;
-  color: #ffffff;
-  padding: 50px 20px 25px;
-  font-family: 'Quicksand', sans-serif;
-}
-
 .footer-content {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 40px;
+  padding: 30px 0;
 }
 
 .footer-col {
-  flex: 1 1 260px;
-  min-width: 240px;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  min-width: 250px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
 }
 
-.flogo {
+.brand .flogo {
   width: 50px;
   height: 50px;
+  object-fit: contain;
 }
 
 .brand h2 {
+  text-decoration: none;
   margin: 0;
-}
-.brand-title {
+  color: #ffffff;
   font-size: 1.8rem;
-  margin: 0;
-  color: #fff;
 }
 
 .brandpara {
   margin-top: 10px;
   font-size: 1rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.links-heading {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #fff;
-  margin-bottom: 12px;
-}
-
-.quick-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-link {
   color: #ddd;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
+  line-height: 1.5;
 }
 
-.footer-link:hover {
-  color: #ffb347;
+.footer-content h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-content ul {
+  list-style: none;
+}
+
+.footer-content ul li {
+  margin-bottom: 8px;
+}
+
+.footer-content a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
   text-decoration: underline;
 }
-
-
-.contact-heading {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 12px;
+.Contactfooter {
+  padding-left: 130px !important;
 }
 
 .ficon {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 10px;
-  font-size: 0.95rem;
-  color: #ccc;
+  gap: 8px;
+  color: #ddd;
 }
-
 
 .footer-bottom {
   text-align: center;
-  margin-top: 40px;
-  padding-top: 15px;
   border-top: 1px solid #444;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-.footer-bottom a {
-  color: #ffb347;
-  margin: 0 6px;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-col {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 30px;
-  }
-
-  .ficon {
-    justify-content: center;
-  }
+  padding-top: 15px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
 }
