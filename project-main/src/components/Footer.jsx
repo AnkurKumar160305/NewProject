@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram } from "lucide-react";
+
 import leaf from "../assets/leaf.png";
 import '../Footer.css';
 
@@ -10,14 +12,25 @@ const Footer = () => (
     <div className="footer-content">
       <div className="footer-col">
         <div className="brand">
-          <img className="flogo" src={leaf} alt="Tridosha logo" /> 
+          <img className="flogo" src={leaf} alt="Tridosha logo" />
           <h2>Tridosha AI</h2>
         </div>
         <p className="brandpara">
           Combining 5,000 years of Ayurvedic wisdom with modern AI to
-              provide personalized wellness guidance for optimal health and
-              balance.
+          provide personalized wellness guidance for optimal health and
+          balance.
         </p>
+        <div style={{ marginTop: "15px" }}>
+          <a href="#" style={{ marginRight: "10px" }}>
+            <Facebook />
+          </a>
+          <a href="#" style={{ marginRight: "10px" }}>
+            <Twitter />
+          </a>
+          <a href="#" style={{ marginRight: "10px" }}>
+            <Instagram />
+          </a>
+        </div>
       </div>
 
       {/* Quick links */}
@@ -32,7 +45,7 @@ const Footer = () => (
       </div>
 
       {/* Contact Info */}
-      <div>
+      <div className="Contactfooter">
         <h3 className="con">Contact</h3>
         <p className="ficon"><Mail size={17} style={{ marginRight: "8px" }} /> support@Tridosha.ai</p>
         <p className="ficon"><Phone size={17} style={{ marginRight: "8px" }} /> +1 (555) 123-4567</p>
@@ -45,8 +58,8 @@ const Footer = () => (
       © 2025 Tridosha AI. All rights reserved. |
       <Link to="/privacy-policy"> Privacy Policy</Link> |
       <Link to="/terms"> Terms and Conditions</Link>|
-      <Link to="/cookies-policy"> Cookies Policy</Link> 
-    
+      <Link to="/cookies-policy"> Cookies Policy</Link>
+
     </div>
   </footer>
 );

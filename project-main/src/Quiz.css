@@ -1,14 +1,19 @@
-/* -------------  GLOBAL RESET FOR QUIZ ONLY ------------- */
-.quiz-container * {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.quiz-content {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
 /* -------------  LAYOUT ------------- */
 .quiz-container {
-  max-width: 720px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -179,7 +184,9 @@
 
 /* -------------  RESPONSIVE ------------- */
 @media (max-width: 600px) {
-  .quiz-card { padding: 2rem 1.5rem; }
+  .quiz-card {
+    padding: 2rem 1.5rem;
+  }
 
   .quiz-buttons {
     flex-direction: column;

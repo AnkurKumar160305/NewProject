@@ -5,7 +5,7 @@ import "../PrivacyPolicy.css"; // Import the custom CSS
 
 const PrivacyPolicy = () => {
   return (
-    <body className="privacy-page">
+    <div className="privacy-page">
       <div className="privacy-header">
         <h1>Privacy Policy</h1>
         <p className="privacy-updated">Last updated: January 2025</p>
@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
           </p>
         </section>
       </div>
-    </body>
+    </div>
   );
 };
 

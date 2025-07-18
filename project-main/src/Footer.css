@@ -47,7 +47,6 @@
 
 .footer-content ul {
   list-style: none;
-  padding-left: 190px;
 }
 
 .footer-content ul li {
@@ -61,6 +60,9 @@
 
 .footer-content a:hover {
   text-decoration: underline;
+}
+.Contactfooter {
+  padding-left: 130px !important;
 }
 
 .ficon {

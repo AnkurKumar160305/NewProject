@@ -11,7 +11,7 @@ body {
   font-family: "Segoe UI", sans-serif;
   width: 100%;
   overflow-x: hidden;
-  background: var(--bg-lighter, #fffdf9);
+  background: var(--bg-lighter, #ffffff);
   color: #333;
   line-height: 1.6;
 }
@@ -29,7 +29,7 @@ body {
   padding: 0;
 }
 
-.site-header {
+.site-headermain {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,31 +43,32 @@ body {
 }
 
 /* Logo section */
-.logo-section {
+.logo-sectionmain {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.logo-section .logo {
+.logo-sectionmain .logomain {
   background-color: #ffffff !important;
 }
 
-.logo {
+.logomain {
   background-color: #fef3c7;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  margin-bottom: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.site-title {
+.site-titlemain {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600 !important;
   color: #ea580c;
-  margin: 0;
+  margin-bottom: 0 !important;
   letter-spacing: -0.4px;
   font-family: "Poppins", sans-serif;
 }
@@ -231,7 +232,7 @@ h1 {
 .card {
   border-radius: 12px;
   padding: 20px;
-  width: 220px;
+  width: 270px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -347,13 +348,14 @@ h1 {
   color: #666;
   line-height: 1.4;
 }
+
 .footer-content {
   max-width: 1200px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
   padding: 30px 0;
 }
 
@@ -375,7 +377,9 @@ h1 {
 }
 
 .brand h2 {
+  text-decoration: none;
   margin: 0;
+  color: #ffffff;
   font-size: 1.8rem;
 }
 
@@ -388,12 +392,12 @@ h1 {
 
 .footer-content h3 {
   font-size: 1.2rem;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
 .footer-content ul {
   list-style: none;
-  padding-left: 190px;
 }
 
 .footer-content ul li {
@@ -408,7 +412,9 @@ h1 {
 .footer-content a:hover {
   text-decoration: underline;
 }
-
+.Contactfooter {
+  padding-left: 130px !important;
+}
 .ficon {
   display: flex;
   align-items: center;
@@ -425,7 +431,10 @@ h1 {
   font-size: 14px;
   color: #ccc;
 }
-
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+}
 /* ANIMATIONS */
 @keyframes zoomRotate {
   0% {

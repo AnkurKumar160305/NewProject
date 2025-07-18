@@ -3,7 +3,7 @@ import "../CookiesPolicy.css";
 
 const CookiePolicy = () => {
   return (
-    <body className="Cookies">
+    <div className="Cookies">
       <div className="container">
         {/* Header */}
         <div className="cookie-header">
@@ -101,7 +101,7 @@ const CookiePolicy = () => {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 

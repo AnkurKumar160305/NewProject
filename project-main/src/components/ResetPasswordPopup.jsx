@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Mail } from "lucide-react";
-import "./ResetPasswordPopup.css";
+import "../ResetPasswordPopup.css";
 
 const ResetPasswordPopup = ({ onClose }) => {
   useEffect(() => {
