@@ -1,219 +1,124 @@
-.wellness-dashboard {
+.result-section-bg {
+  background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 50%, #ffcc4a 100%);
+  padding: 2rem 0;
   min-height: 100vh;
-  background: hsl(var(--background));
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.dashboard-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.result-container {
+  background-color: #fffdf5; /* Off-white background for the main content card */
+  max-width: 1000px;
+  margin: 3rem auto; /* Top and bottom margin, auto for left/right centering */
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Soft, subtle shadow */
+  text-align: center; /* Default text alignment for children */
+}
+
+/* Header Section (Dosha Display) */
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.resheader {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it takes full width of its wrapper */
 }
 
-/* Header Section */
-.dashboard-header {
+.resheader-icon.gradient-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 16px;
+  /* Background and shadow are set inline via JS for dynamic colors */
+}
+
+.weltitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #000000 !important; /* Deep orange/brown for main title */
   margin-bottom: 1rem;
 }
 
-.avatar-section {
-  flex-shrink: 0;
+.result-description {
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
-.avatar-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--wellness-orange)),
-    hsl(var(--wellness-orange)) 60%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
+.result-description .highlight.dosha {
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-section {
-  flex: 1;
-}
-
-.welcome-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.5rem;
-}
-
-.dosha-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.dosha-text {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9rem;
-}
-
-.dosha-type {
-  background: hsl(var(--wellness-orange));
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.dosha-subtitle {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-/* Action Cards */
-.action-cards {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 1rem;
-}
-
-.action-card {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
-}
-
-.action-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.action-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.chat-card .action-icon {
-  background: hsl(var(--wellness-green-light));
-  color: hsl(var(--wellness-green));
-}
-
-.wellness-card .action-icon {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
-}
-
-.retake-card .action-icon {
-  background: hsl(var(--muted));
-  color: hsl(var(--muted-foreground));
-}
-
-.action-content h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.5rem;
-}
-
-.action-content p {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-bottom: 0.5rem;
-}
-
-.action-status {
-  color: hsl(var(--wellness-green));
-  font-size: 0.85rem;
-  font-weight: 500;
+  color: #ffffff; /* White text on colored badge */
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 /* Characteristics Section */
-.characteristics-section {
+.characteristics {
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.result-subtitle {
+  font-size: 1.6rem;
   margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
 }
 
-.section-header {
-  margin-bottom: 1rem;
+.vata-bg {
+  background-color: #738d9b; /* Vata specific background */
+}
+.pitta-bg {
+  background-color: #e87c47d2; /* Pitta specific background */
+}
+.kapha-bg {
+  background-color: #9de4a0; /* Kapha specific background */
 }
 
-.section-header h2 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.5rem;
-}
-
-.section-header p {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.characteristics-grid {
+.traits {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.characteristic-item {
-  display: flex;
-  align-items: center;
+.trait {
+  background-color: #fff;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: #333;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.characteristic-tag {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.characteristic-tag.focused {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
-}
-
-.characteristic-tag.determined {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
-}
-
-.characteristic-tag.leader {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
-}
-
-.characteristic-tag.intelligent {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
-}
-
-/* Category Icons */
+/* Category Navigation Tabs */
 .category-icons {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin: 2rem 0;
+  gap: 4rem;
+  margin: 3rem 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .category-item {
@@ -223,241 +128,356 @@
   gap: 0.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-width: 80px; /* Ensure sufficient touch area on small screens */
 }
 
 .category-item:hover .category-icon-wrapper {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
+  background: #e0e0e0; /* Hover effect for non-active */
+  color: #333;
+  transform: scale(1.05);
 }
 
 .category-item.active .category-icon-wrapper {
-  background: hsl(var(--wellness-orange));
+  background: linear-gradient(
+    135deg,
+    #f97316,
+    #fb923c
+  ); /* Primary gradient for active */
   color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4); /* Stronger shadow for active */
 }
 
 .category-item.active span {
-  color: hsl(var(--wellness-orange));
+  color: #f97316; /* Active text color */
   font-weight: 600;
 }
 
 .category-icon-wrapper {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: hsl(var(--muted));
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #f0f0f0; /* Default background for icon wrapper */
+  border: 2px solid #ddd; /* Subtle border */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: hsl(var(--muted-foreground));
-  transition: all 0.2s ease;
-}
-
-.category-icon-wrapper:hover {
-  background: hsl(var(--wellness-orange-light));
-  color: hsl(var(--wellness-orange));
+  color: #666; /* Default icon color */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .category-item span {
   font-size: 0.9rem;
-  color: hsl(var(--muted-foreground));
+  color: #666;
   font-weight: 500;
 }
-.content-section {
-  margin-bottom: 2rem;
+
+/* Dynamic Content Section - Overall Layout */
+.dynamic-section {
+  margin-bottom: 3rem;
+  text-align: left;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fefcf4; /* Light background for the content area */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-.content-grid {
+.dynamic-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dynamic-header {
+  text-align: left;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Allow wrapping for title/subtitle on small screens */
+}
+
+.dynamic-header-icon {
+  font-size: 1.8rem;
+}
+
+.dynamic-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.dynamic-header p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  flex-grow: 1; /* Allows subtitle to take remaining space */
+}
+
+/* Specific Grid Layouts for items */
+.dynamic-grid-2-col {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  ); /* Responsive 2-column */
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
-.content-item {
+
+.dynamic-grid-1-col {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 600px; /* Constrain width for single column list */
+  margin-right: auto;
+}
+
+/* Individual Item Box Styles */
+.dynamic-item-small {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  background: hsl(var(--wellness-green-light));
-  border-radius: var(--radius);
-  color: hsl(var(--wellness-green));
+  background-color: #e6f7fa; /* Light background for items */
+  border-radius: 12px;
+  color: #333;
   font-weight: 500;
-  transition: all 0.2s ease;
-}
-.content-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.content-icon {
-  font-size: 1.5rem;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* Products Section */
-.products-section {
-  margin-bottom: 2rem;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.product-card {
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
-}
-
-.product-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.product-image {
-  height: 120px;
-  border-radius: var(--radius);
-  background: hsl(var(--muted));
+.dynamic-item-long {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.product-placeholder {
-  font-size: 3rem;
-  opacity: 0.6;
-}
-
-.product-info h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  margin-bottom: 0.5rem;
-}
-
-.product-info p {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.product-price {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: hsl(var(--wellness-orange));
-  margin-bottom: 1rem;
-}
-
-.product-btn {
-  background: hsl(var(--wellness-orange));
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #e6f7fa;
+  border-radius: 12px;
+  color: #333;
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.product-btn:hover {
-  background: hsl(var(--wellness-orange));
-  filter: brightness(0.9);
-  transform: translateY(-1px);
+.bullet-icon {
+  font-size: 1.2rem;
+  line-height: 1; /* Prevents extra spacing from emoji icons */
+  flex-shrink: 0; /* Prevent icon from shrinking on long text */
 }
 
-/* Call to Action Section */
-.cta-section {
-  background: hsl(var(--wellness-orange));
-  border-radius: var(--radius);
-  padding: 3rem 2rem;
-  text-align: center;
-  color: white;
+/* Diet Section Specific Styles */
+.dynamic-diet-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column on small screens */
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dynamic-diet-grid {
+    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+  }
+}
+
+.diet-card {
+  background-color: #fff; /* White background for the cards */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.diet-card .dynamic-header {
+  text-align: left;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separator line below header */
+}
+.diet-card .dynamic-header h2 {
+  font-size: 1.5rem; /* Slightly smaller heading for cards */
+}
+.diet-card .dynamic-header p {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.favor-card .dynamic-header h2 {
+  color: #52b788; /* Green for favor */
+}
+.minimize-card .dynamic-header h2 {
+  color: #ef4444; /* Red for minimize */
+}
+
+.diet-list {
+  list-style: none; /* Remove default list bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.diet-list-item {
+  display: flex;
+  align-items: flex-start; /* Align text to top if multiple lines */
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.diet-list-item .bullet-icon {
+  font-size: 1em; /* Make bullet smaller to match text */
+  line-height: 1.5; /* Align with text */
+}
+
+/* Pro Tip Box */
+.pro-tip-box {
+  background-color: #fff9e5; /* Light yellow background */
+  border: 1px solid #ffcc4a; /* Yellow border */
+  border-radius: 12px;
+  padding: 1.5rem;
   margin-top: 2rem;
+  display: flex;
+  align-items: flex-start; /* Align icon to top */
+  gap: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.cta-content h2 {
+.pro-tip-icon {
   font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: #f97316; /* Orange color for the bulb */
+  line-height: 1; /* Prevent extra spacing */
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
-.cta-content p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.pro-tip-box p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
 }
 
-.cta-button {
-  background: white;
-  color: hsl(var(--wellness-orange));
+/* Call To Action (CTA) Section */
+.cta {
+  background: linear-gradient(to bottom right, #ff8b44, #ffcb5c);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 3rem; /* Space above CTA */
+  box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4); /* Stronger shadow for CTA */
+}
+
+.cta p {
+  margin: 0 0 15px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 500;
+}
+
+.cta button {
+  background: linear-gradient(to bottom right, #ff3401, #ff8812);
   border: none;
-  padding: 1rem 2rem;
-  border-radius: var(--radius);
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 20px;
   cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.1em;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle button shadow */
 }
 
-.cta-button:hover {
+.cta button:hover {
+  background-color: #e0e0e0;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .dashboard-container {
-    padding: 0 1rem;
-  }
-
-  .action-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .welcome-title {
-    font-size: 1.5rem;
-  }
-
   .category-icons {
-    gap: 1.5rem;
+    gap: 2rem; /* Reduce gap for smaller screens */
+    justify-content: space-around; /* Distribute items evenly */
   }
 
-  .category-icon-wrapper {
-    width: 50px;
-    height: 50px;
+  .dynamic-section {
+    padding: 15px;
   }
 
-  .characteristics-grid {
-    justify-content: center;
-  }
-  .content-grid {
-    grid-template-columns: 1fr;
+  .dynamic-grid-2-col {
+    grid-template-columns: 1fr; /* Stack columns for herbs/imbalance on small screens */
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-section {
-    padding: 2rem 1rem;
-  }
-
-  .cta-content h2 {
+  .dynamic-header h2 {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .result-container {
+    padding: 2rem 1rem;
+    margin: 1.5rem auto; /* Reduce overall margin */
+  }
+
+  .result-title {
+    font-size: 2.2rem;
+  }
+
+  .result-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .result-description {
+    font-size: 0.95rem;
+  }
+
+  .dynamic-header {
+    flex-direction: column; /* Stack header elements */
+    align-items: flex-start;
+  }
+  .dynamic-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .dynamic-header p {
+    font-size: 0.85rem;
+  }
+
+  .dynamic-item-small,
+  .dynamic-item-long {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .diet-card {
+    padding: 1rem;
+  }
+
+  .diet-list-item {
+    font-size: 0.9rem;
+  }
+
+  .pro-tip-box {
+    flex-direction: column; /* Stack icon and text for pro-tip on very small screens */
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .pro-tip-box p {
+    font-size: 0.9rem;
+  }
+
+  .cta p {
+    font-size: 1em;
+  }
+
+  .cta button {
+    padding: 10px 20px;
+    font-size: 1em;
   }
 }
