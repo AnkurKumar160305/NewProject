@@ -4,12 +4,12 @@ import Doshas from "./Doshas";
 import Journey from "./Journey";
 import "../LandingPage.css";
 
-const LandingPage = ({ onSignInClick }) => {
+const LandingPage = ({ onStartAssessmentClick }) => {
   return (
     <main id="main-content" className="main-wrapper">
-      <Hero onSignInClick={onSignInClick} />
+      <Hero onSignInClick={onStartAssessmentClick} />
       <Doshas />
-      <Journey />  
+      <Journey />
     </main>
   );
 };

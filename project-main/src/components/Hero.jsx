@@ -4,7 +4,7 @@ import { Sparkles, BookOpen } from "lucide-react"
 import "../Hero.css";
 import { Link } from "react-router-dom";
 
-const Hero = () => (
+const Hero = ({ onSignInClick }) => (
   <section className="hero">
     <div className="logo-ring">
       <img src={leaf} alt="Tridosha Logo" />
@@ -15,11 +15,11 @@ const Hero = () => (
       wellness guidance powered by ancient wisdom and modern AI.
     </p>
     <div className="hero-buttons">
-      <Link to="/name-entry" className="btn orange">
+      <button onClick={onSignInClick} className="btn orange">
         <Sparkles size={18} /> Start Dosha Assessment
-      </Link>
+      </button>
 
-      <Link to="/learn"  className="btn white">
+      <Link to="/learn" className="btn white">
         <BookOpen size={18} /> Learn About Ayurveda
       </Link>
     </div>
