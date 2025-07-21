@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"; 
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../SignInUp.css";
 import * as lucide from "lucide-react";
@@ -12,6 +12,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     terms: false,
   });
   const [isValid, setIsValid] = useState(false);
+  const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
   const navigate = useNavigate();
 
@@ -61,11 +62,42 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     }));
   };
 
-  const handleSignUpSubmit = (e) => {
+  const handleSignUpSubmit = async (e) => {
     e.preventDefault();
-    console.log("Sign Up submitted:", formData);
-    navigate("/name-entry");
-    onClose();
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message || "Registration failed");
+        setLoading(false);
+        return;
+      }
+
+      // Save token and user info
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      // Navigate to Name Entry page
+      navigate("/name-entry");
+      onClose();
+    } catch (err) {
+      console.error("Registration error:", err);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSignInRedirect = (e) => {
@@ -73,16 +105,22 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     onClose();
     onSignInClick();
   };
-  const Icon = passwordVisible ? lucide.EyeOff : lucide.Eye;
+
+  const PasswordIcon = passwordVisible ? lucide.EyeOff : lucide.Eye;
 
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay active" onClick={(e) => {
-      if (e.target === e.currentTarget) onClose();
-    }}>
+    <div
+      className="modal-overlay active"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
       <div className="signup-modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose} aria-label="Close modal">×</button>
+        <button className="close-btn" onClick={onClose} aria-label="Close modal">
+          ×
+        </button>
         <h2>Create Account</h2>
         <form onSubmit={handleSignUpSubmit}>
           <div className="input-with-icon">
@@ -91,10 +129,11 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               name="username"
               placeholder="Username"
               required
+              value={formData.username}
               onChange={handleInputChange}
             />
             <div className="input-icon">
-                <lucide.User size={20} color="#666" />
+              <lucide.User size={20} color="#666" />
             </div>
           </div>
 
@@ -104,6 +143,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               name="email"
               placeholder="Email"
               required
+              value={formData.email}
               onChange={handleInputChange}
             />
             <div className="input-icon">
@@ -117,6 +157,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               name="password"
               placeholder="Password"
               required
+              value={formData.password}
               onChange={handleInputChange}
             />
             <button
@@ -126,8 +167,8 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               aria-label="Toggle password visibility"
             >
               <div className="input-icon">
-                <Icon size={20} color="#666"/>
-            </div>
+                <PasswordIcon size={20} color="#666" />
+              </div>
             </button>
           </div>
 
@@ -142,18 +183,25 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               type="checkbox"
               id="agreeTerms"
               name="terms"
+              checked={formData.terms}
               onChange={handleInputChange}
             />
-            <label htmlFor="agreeTerms"className="custom-checkbox-label">I agree to the terms and conditions</label>
+            <label htmlFor="agreeTerms" className="custom-checkbox-label">
+              I agree to the terms and conditions
+            </label>
           </div>
 
-          <button type="submit" disabled={!isValid}>Register</button>
+          <button type="submit" className="primary-button" disabled={!isValid || loading}>
+            {loading ? "Registering..." : "Register"}
+          </button>
         </form>
 
         <div className="modal-footer">
           <p>
             Already have an account?{" "}
-            <a href="#" onClick={handleSignInRedirect}>Sign In</a>
+            <a href="#" onClick={handleSignInRedirect}>
+              Sign In
+            </a>
           </p>
         </div>
       </div>
