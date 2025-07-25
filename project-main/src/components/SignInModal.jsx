@@ -6,6 +6,7 @@ import { Mail, Eye, EyeOff } from "lucide-react";
 const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
   const navigate = useNavigate();
 
@@ -31,11 +32,38 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) 
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSignInSubmit = (e) => {
+  const handleSignInSubmit = async (e) => {
     e.preventDefault();
-    console.log("Sign In submitted:", formData);
-    navigate("/name-entry");
-    onClose();
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message || "Invalid credentials");
+        setLoading(false);
+        return;
+      }
+
+      // ✅ Store token & user info
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      // ✅ Redirect
+      navigate("/name-entry");
+      onClose();
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSignupRedirect = (e) => {
@@ -73,6 +101,7 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) 
               name="email"
               placeholder="Email"
               required
+              value={formData.email}
               onChange={handleInputChange}
             />
             <div className="input-icon">
@@ -86,6 +115,7 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) 
               name="password"
               placeholder="Password"
               required
+              value={formData.password}
               onChange={handleInputChange}
             />
             <button
@@ -107,7 +137,9 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) 
             </label>
           </div>
 
-          <button type="submit" className="primary-button">Sign In</button>
+          <button type="submit" className="primary-button" disabled={loading}>
+            {loading ? "Signing In..." : "Sign In"}
+          </button>
 
           <div className="modal-footer">
             <p style={{ marginTop: "1rem" }}>
