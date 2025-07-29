@@ -11,7 +11,7 @@ export default function Dashboard() {
           <div className="logo" />
           <h1 className="app-title">
             <Leaf size={24} style={{ marginRight: "8px" }} />
-            Tridosha AI
+            AyurAI Compass
           </h1>
         </div>
 
@@ -20,6 +20,7 @@ export default function Dashboard() {
           <button>AI Chat</button>
           <button>Dosha Test</button>
           <button>Log Symptoms</button>
+          <button>My Progress</button>
           <button>Profile</button>
           <button>Settings</button>
         </nav>
@@ -27,8 +28,8 @@ export default function Dashboard() {
 
       {/* Welcome Card */}
       <div className="welcome-card">
-        <h2>Welcome back, XYZ! 🙏</h2>
-        <p>Your Ayurvedic wellness journey continues today.</p>
+        <h2>Welcome back, Student!🙏</h2>
+        <p>Your Ayurvedic wellness journey continues today</p>
         <span className="dosha-tag">Primary Dosha: Vata</span>
       </div>
 
