@@ -46,18 +46,24 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) 
       const data = await response.json();
 
       if (!response.ok) {
-        alert(data.message || "Invalid credentials");
-        setLoading(false);
-        return;
+        throw new Error(data?.message || "Login failed");
       }
+
 
       // ✅ Store token & user info
       localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem('user', JSON.stringify({
+        _id: data.user._id, // ✅ Include _id
+        email: data.user.email,
+        username: data.user.username,
+        token: data.token,
+      }));
 
-      // ✅ Redirect
-      navigate("/name-entry");
+
+
       onClose();
+      navigate("/name-entry");
+      window.location.reload(); // for immediate header update
     } catch (error) {
       console.error("Login error:", error);
       alert("Something went wrong. Please try again.");
@@ -90,9 +96,7 @@ const SignInModal = ({ isOpen, onClose, onSignUpClick, onForgotPasswordClick }) 
       }}
     >
       <div className="signin-modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose} aria-label="Close modal">
-          ×
-        </button>
+        <button className="close-btn" onClick={onClose} aria-label="Close modal">×</button>
         <h2>Welcome Back</h2>
         <form onSubmit={handleSignInSubmit}>
           <div className="input-with-icon">

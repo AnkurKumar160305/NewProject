@@ -1,483 +1,553 @@
-.result-section-bg {
-  background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 50%, #ffcc4a 100%);
-  padding: 2rem 0;
+/* Ayurvedic-inspired CSS for the Result page with building blocks and tree pattern */
+
+/* Import Google Fonts for a traditional, serene typography */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500&family=Cormorant+Garamond:wght@400;600&display=swap');
+
+/* Root variables for an Ayurvedic color palette */
+:root {
+  --muted-green: #8A9A5B;
+  --warm-beige: #F5E8C7;
+  --soft-brown: #4A3C31;
+  --saffron-accent: #D4A017;
+  --light-sage: #DDE5D0;
+  --glow-sage: rgba(138, 154, 91, 0.3);
+  --shadow-earth: rgba(0, 0, 0, 0.1);
+}
+
+/* Base layout with a soothing Ayurvedic gradient */
+.ai-layout-wrapper {
+  font-family: 'Lora', serif;
+  background: linear-gradient(135deg, var(--light-sage) 0%, var(--warm-beige) 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 20s ease infinite;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.result-container {
-  background-color: #fffdf5; /* Off-white background for the main content card */
-  max-width: 1000px;
-  margin: 3rem auto; /* Top and bottom margin, auto for left/right centering */
-  padding: 2.5rem 2rem;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Soft, subtle shadow */
-  text-align: center; /* Default text alignment for children */
-}
-
-/* Header Section (Dosha Display) */
-.header-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.resheader {
+  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border-radius: 10px;
+  /* Removed align-items: center to allow full width stretch */
+  position: relative;
+  overflow-x: hidden;
+  width: 100%; /* Ensure wrapper takes full viewport width */
+  max-width: 1200px; /* Maintain max width constraint */
+  margin: 50px auto; /* Center the wrapper if needed */
+}
+
+/* Animated background gradient */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header with a traditional Ayurvedic look */
+.ai-layout-header {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--soft-brown);
   text-align: center;
-  padding: 25px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure it takes full width of its wrapper */
+  margin-bottom: 2.5rem;
+  text-shadow: 2px 2px 6px var(--shadow-earth);
+  position: relative;
+  width: 100%; /* Ensure header spans full wrapper width */
 }
 
-.resheader-icon.gradient-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  /* Background and shadow are set inline via JS for dynamic colors */
+.ai-layout-header::after {
+  content: '🌳';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: var(--muted-green);
+  animation: leafPulse 2s ease-in-out infinite;
 }
 
-.weltitle {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #000000 !important; /* Deep orange/brown for main title */
-  margin-bottom: 1rem;
-}
-
-.result-description {
-  font-size: 1.3rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.result-description .highlight.dosha {
-  font-weight: bold;
-  color: #ffffff; /* White text on colored badge */
-  padding: 8px 12px;
-  border-radius: 12px;
-  display: inline-block;
-}
-
-/* Characteristics Section */
-.characteristics {
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.result-subtitle {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: bold;
-}
-
-.vata-bg {
-  background-color: #738d9b; /* Vata specific background */
-}
-.pitta-bg {
-  background-color: #e87c47d2; /* Pitta specific background */
-}
-.kapha-bg {
-  background-color: #9de4a0; /* Kapha specific background */
-}
-
-.traits {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.trait {
-  background-color: #fff;
-  padding: 12px 20px;
-  border-radius: 20px;
-  color: #333;
-  font-weight: bold;
-  font-size: 1em;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Category Navigation Tabs */
-.category-icons {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  margin: 3rem 0;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.category-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-width: 80px; /* Ensure sufficient touch area on small screens */
-}
-
-.category-item:hover .category-icon-wrapper {
-  background: #e0e0e0; /* Hover effect for non-active */
-  color: #333;
-  transform: scale(1.05);
-}
-
-.category-item.active .category-icon-wrapper {
-  background: linear-gradient(
-    135deg,
-    #f97316,
-    #fb923c
-  ); /* Primary gradient for active */
-  color: white;
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4); /* Stronger shadow for active */
-}
-
-.category-item.active span {
-  color: #f97316; /* Active text color */
+.ai-layout-header .highlight {
+  color: var(--saffron-accent);
   font-weight: 600;
 }
 
-.category-icon-wrapper {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  background: #f0f0f0; /* Default background for icon wrapper */
-  border: 2px solid #ddd; /* Subtle border */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666; /* Default icon color */
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* Loading and error messages with subtle glow */
+.ai-loading, .ai-error {
+  font-size: 1.3rem;
+  color: var(--soft-brown);
+  background: rgba(245, 232, 199, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px var(--shadow-earth), 0 0 10px var(--glow-sage);
+  animation: glowPulse 1.5s ease-in-out infinite;
+  width: 100%; /* Ensure messages span full width */
+  max-width: 1200px; /* Match wrapper max-width */
 }
 
-.category-item span {
-  font-size: 0.9rem;
-  color: #666;
-  font-weight: 500;
+/* Glowing pulse animation */
+@keyframes glowPulse {
+  0% { box-shadow: 0 6px 12px var(--shadow-earth), 0 0 10px var(--glow-sage); }
+  50% { box-shadow: 0 6px 12px var(--shadow-earth), 0 0 20px var(--glow-sage); }
+  100% { box-shadow: 0 6px 12px var(--shadow-earth), 0 0 10px var(--glow-sage); }
 }
 
-/* Dynamic Content Section - Overall Layout */
-.dynamic-section {
-  margin-bottom: 3rem;
-  text-align: left;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #fefcf4; /* Light background for the content area */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-.dynamic-header-title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.dynamic-header {
-  text-align: left;
-  margin-bottom: 20px;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap; /* Allow wrapping for title/subtitle on small screens */
-}
-
-.dynamic-header-icon {
-  font-size: 1.8rem;
+/* Profile section at top with full width and flex layout */
+.profile-section {
+  background: linear-gradient(135deg, var(--warm-beige), var(--light-sage)) !important;
+  border-radius: 10px !important;
+  padding: 1rem !important;
+  box-shadow: 0 4px 12px var(--shadow-earth) !important;
+  border: 2px solid var(--muted-green) !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  width: 100% !important; /* Full width of wrapper */
+  max-width: 1200px !important; /* Match wrapper max-width */
+  margin: 0 0 1.5rem 0 !important; /* Space before grid */
+  position: relative !important;
+  overflow: hidden !important;
+  background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png') !important;
+  background-blend-mode: overlay !important;
+  display: flex !important; /* Use flex for layout */
+  flex-direction: row !important; /* Horizontal layout */
+  align-items: center !important; /* Vertically center items */
+  gap: 1rem !important; /* Space between text and image */
 }
 
-.dynamic-header h2 {
-  font-size: 1.8rem;
-  margin: 0;
-  color: #333;
-  font-weight: bold;
+.profile-section > * {
+  max-height: 100% !important;
+  overflow: hidden !important;
 }
 
-.dynamic-header p {
-  font-size: 1rem;
-  color: #666;
-  margin: 0;
-  flex-grow: 1; /* Allows subtitle to take remaining space */
+.profile-section .ai-section-content {
+  max-height: calc(100% - 160px) !important; /* Reserve space for image */
+  overflow-y: auto !important;
+  padding: 0 0.5rem !important;
+  flex: 1 !important; /* Allow content to grow and shrink */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
 }
 
-/* Specific Grid Layouts for items */
-.dynamic-grid-2-col {
+.profile-section .ai-section-image {
+  max-height: 120px !important; /* Ensure image fits */
+  width: 120px !important; /* Fixed width for image */
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  margin: 0.5rem 0 !important;
+  border: 2px solid var(--muted-green) !important;
+  box-shadow: 0 0 8px var(--glow-sage) !important;
+  transition: transform 0.5s ease !important;
+  position: relative !important;
+  z-index: 1 !important;
+  flex-shrink: 0 !important; /* Prevent image from shrinking */
+}
+
+.profile-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: radial-gradient(circle at top left, rgba(245, 232, 199, 0.3), transparent) !important;
+  pointer-events: none !important;
+}
+
+/* Sections wrapper with grid for middle sections */
+.ai-sections-wrapper {
+  max-width: 1200px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  ); /* Responsive 2-column */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.dynamic-grid-1-col {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column */
-  gap: 1rem;
-  margin-top: 1rem;
-  max-width: 600px; /* Constrain width for single column list */
-  margin-right: auto;
-}
-
-/* Individual Item Box Styles */
-.dynamic-item-small {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background-color: #e6f7fa; /* Light background for items */
-  border-radius: 12px;
-  color: #333;
-  font-weight: 500;
-  font-size: 1.05rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.dynamic-item-long {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  background-color: #e6f7fa;
-  border-radius: 12px;
-  color: #333;
-  font-weight: 500;
-  font-size: 1.05rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.bullet-icon {
-  font-size: 1.2rem;
-  line-height: 1; /* Prevents extra spacing from emoji icons */
-  flex-shrink: 0; /* Prevent icon from shrinking on long text */
-}
-
-/* Diet Section Specific Styles */
-.dynamic-diet-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Default to single column on small screens */
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-@media (min-width: 768px) {
-  .dynamic-diet-grid {
-    grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
-  }
-}
-
-.diet-card {
-  background-color: #fff; /* White background for the cards */
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: left;
-}
-
-.diet-card .dynamic-header {
-  text-align: left;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separator line below header */
-}
-.diet-card .dynamic-header h2 {
-  font-size: 1.5rem; /* Slightly smaller heading for cards */
-}
-.diet-card .dynamic-header p {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-.favor-card .dynamic-header h2 {
-  color: #52b788; /* Green for favor */
-}
-.minimize-card .dynamic-header h2 {
-  color: #ef4444; /* Red for minimize */
-}
-
-.diet-list {
-  list-style: none; /* Remove default list bullets */
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.5rem 0 !important; /* Space before CTA */
 }
 
-.diet-list-item {
-  display: flex;
-  align-items: flex-start; /* Align text to top if multiple lines */
-  gap: 0.75rem;
-  margin-bottom: 0.7rem;
-  font-size: 1rem;
-  color: #333;
+/* Individual section as a building block with tree pattern and height containment */
+.ai-section {
+  background: linear-gradient(135deg, var(--warm-beige), var(--light-sage)) !important;
+  border-radius: 10px !important;
+  padding: 1rem !important;
+  box-shadow: 0 4px 12px var(--shadow-earth) !important;
+  border: 2px solid var(--muted-green) !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png') !important;
+  background-blend-mode: overlay !important;
 }
 
-.diet-list-item .bullet-icon {
-  font-size: 1em; /* Make bullet smaller to match text */
-  line-height: 1.5; /* Align with text */
+.ai-section > * {
+  max-height: 100% !important;
+  overflow: hidden !important;
 }
 
-/* Pro Tip Box */
-.pro-tip-box {
-  background-color: #fff9e5; /* Light yellow background */
-  border: 1px solid #ffcc4a; /* Yellow border */
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  display: flex;
-  align-items: flex-start; /* Align icon to top */
-  gap: 1rem;
-  text-align: left;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+.ai-section-content {
+  max-height: calc(100% - 160px) !important;
+  overflow-y: auto !important;
+  padding: 0 0.5rem !important;
 }
 
-.pro-tip-icon {
-  font-size: 1.8rem;
-  color: #f97316; /* Orange color for the bulb */
-  line-height: 1; /* Prevent extra spacing */
-  flex-shrink: 0; /* Prevent icon from shrinking */
+.ai-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: radial-gradient(circle at top left, rgba(245, 232, 199, 0.3), transparent) !important;
+  pointer-events: none !important;
 }
 
-.pro-tip-box p {
-  margin: 0;
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.5;
+.ai-section:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 6px 15px var(--shadow-earth) !important;
+  border-color: var(--saffron-accent) !important;
 }
 
-/* Call To Action (CTA) Section */
-.cta {
-  background: linear-gradient(to bottom right, #ff8b44, #ffcb5c);
-  padding: 25px;
-  border-radius: 15px;
+/* Section titles with animated icons */
+.ai-section-title, .ai-section h3 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.6rem !important;
+  color: var(--muted-green) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.react-icon {
+  color: var(--saffron-accent) !important;
+  font-size: 1.4rem !important;
+  transition: transform 0.3s ease !important;
+}
+
+.ai-section:hover .react-icon {
+  transform: rotate(15deg) scale(1.2) !important;
+}
+
+/* Dosha-specific gradients with Ayurvedic tones */
+.dosha-vata {
+  background: linear-gradient(135deg, var(--light-sage) 0%, var(--warm-beige) 70%, #C8D8C5) !important;
+  background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png') !important;
+  background-blend-mode: overlay !important;
+  background-size: 200% 200% !important;
+  animation: gradientFlow 20s ease infinite !important;
+}
+
+.dosha-pitta {
+  background: linear-gradient(135deg, #F5E8C7 0%, #D4A01733 70%, var(--light-sage)) !important;
+  background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png') !important;
+  background-blend-mode: overlay !important;
+  background-size: 200% 200% !important;
+  animation: gradientFlow 18s ease infinite !important;
+}
+
+.dosha-kapha {
+  background: linear-gradient(135deg, var(--muted-green) 0%, var(--warm-beige) 70%, #DDE5D0) !important;
+  background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png') !important;
+  background-blend-mode: overlay !important;
+  background-size: 200% 200% !important;
+  animation: gradientFlow 22s ease infinite !important;
+}
+
+/* Section text and list with elegant typography and height control */
+.ai-section-text {
+  font-family: 'Lora', serif !important;
+  font-size: 0.9rem !important;
+  color: var(--soft-brown) !important;
+  line-height: 1.3 !important;
+  margin: 0.3rem 0 !important;
+}
+
+.ai-section-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ai-section-list li {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 0.85rem !important;
+  color: var(--soft-brown) !important;
+  margin-bottom: 0.4rem !important;
+  position: relative !important;
+  padding-left: 1.5rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.ai-section-list li:hover {
+  color: var(--muted-green) !important;
+}
+
+.ai-section-list li::before {
+  content: '🌳' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 2px !important;
+  font-size: 1rem !important;
+  animation: leafSway 3s ease-in-out infinite !important;
+}
+
+/* Leaf sway animation */
+@keyframes leafSway {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(3px) rotate(5deg); }
+  100% { transform: translateX(0); }
+}
+
+/* Image with a glowing border and height containment */
+.ai-section-image {
+  width: 100% !important;
+  max-height: 120px !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  margin: 0.5rem 0 !important;
+  border: 2px solid var(--muted-green) !important;
+  box-shadow: 0 0 8px var(--glow-sage) !important;
+  transition: transform 0.5s ease !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.ai-section-image:hover {
+  transform: scale(1.05) !important;
+}
+
+/* CTA section at bottom with full width */
+.cta-section {
+  background: linear-gradient(45deg, var(--muted-green), #A68A64);
+  color: #FFFFFF;
   text-align: center;
-  margin-top: 3rem; /* Space above CTA */
-  box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4); /* Stronger shadow for CTA */
+  padding: 1rem !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow-earth);
+  position: relative;
+  overflow: hidden;
+  max-height: 300px !important;
+  width: 100% !important; /* Full width of wrapper */
+  max-width: 1200px !important; /* Match wrapper max-width */
+  margin: 1.5rem 0 0 0 !important; /* Space after grid */
 }
 
-.cta p {
-  margin: 0 0 15px;
-  font-size: 1.2em;
-  line-height: 1.5;
-  color: #fff;
-  font-weight: 500;
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(245, 232, 199, 0.2), transparent);
+  animation: shimmer 5s linear infinite;
 }
 
-.cta button {
-  background: linear-gradient(to bottom right, #ff3401, #ff8812);
+@keyframes shimmer {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cta-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem !important;
+  margin-bottom: 0.5rem !important;
+  text-shadow: 1px 1px 3px var(--shadow-earth);
+}
+
+.cta-description {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.5rem !important;
+  font-family: 'Lora', serif;
+}
+
+.cta-button {
+  background: var(--saffron-accent);
+  color: var(--soft-brown);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem !important;
   border: none;
-  padding: 12px 25px;
-  border-radius: 20px;
+  border-radius: 6px !important;
   cursor: pointer;
-  font-weight: bold;
-  color: #ffffff;
-  font-size: 1.1em;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle button shadow */
+  box-shadow: 0 2px 6px var(--shadow-earth);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta button:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.cta-button:hover {
+  background: var(--muted-green);
+  color: #FFFFFF;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px var(--glow-sage);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .category-icons {
-    gap: 2rem; /* Reduce gap for smaller screens */
-    justify-content: space-around; /* Distribute items evenly */
-  }
-
-  .dynamic-section {
-    padding: 15px;
-  }
-
-  .dynamic-grid-2-col {
-    grid-template-columns: 1fr; /* Stack columns for herbs/imbalance on small screens */
-  }
-
-  .dynamic-header h2 {
-    font-size: 1.5rem;
-  }
+/* Leaf pulse animation for header decoration */
+@keyframes leafPulse {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.2); }
+  100% { transform: translateX(-50%) scale(1); }
 }
 
+/* Responsive design for smaller screens */
 @media (max-width: 600px) {
-  .result-container {
-    padding: 2rem 1rem;
-    margin: 1.5rem auto; /* Reduce overall margin */
-  }
-
-  .result-title {
+  .ai-layout-header {
     font-size: 2.2rem;
   }
 
-  .result-subtitle {
-    font-size: 1.2rem;
+  .ai-sections-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .result-description {
-    font-size: 0.95rem;
+  .ai-section {
+    max-height: 250px !important;
+    padding: 0.8rem !important;
   }
 
-  .dynamic-header {
-    flex-direction: column; /* Stack header elements */
-    align-items: flex-start;
-  }
-  .dynamic-header h2 {
-    font-size: 1.3rem;
+  .ai-section-image {
+    max-height: 100px !important;
   }
 
-  .dynamic-header p {
-    font-size: 0.85rem;
+  .profile-section {
+    max-height: 250px !important;
+    padding: 0.8rem !important;
+    flex-direction: column !important; /* Stack vertically on mobile */
   }
 
-  .dynamic-item-small,
-  .dynamic-item-long {
-    font-size: 0.95rem;
-    padding: 0.8rem;
+  .profile-section .ai-section-content {
+    max-height: none !important; /* Remove height constraint on mobile */
+    flex: none !important;
   }
 
-  .diet-card {
-    padding: 1rem;
+  .profile-section .ai-section-image {
+    max-height: 100px !important; /* Adjusted for mobile */
+    width: 100px !important; /* Adjusted width for mobile */
+    margin-top: 0.5rem !important;
   }
 
-  .diet-list-item {
-    font-size: 0.9rem;
+  .cta-section {
+    max-height: 250px !important;
+    padding: 0.8rem !important;
   }
 
-  .pro-tip-box {
-    flex-direction: column; /* Stack icon and text for pro-tip on very small screens */
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-  }
-  .pro-tip-box p {
-    font-size: 0.9rem;
+  .cta-heading {
+    font-size: 1.6rem;
   }
 
-  .cta p {
-    font-size: 1em;
-  }
-
-  .cta button {
-    padding: 10px 20px;
-    font-size: 1em;
+  .cta-button {
+    padding: 0.5rem 1rem;
   }
 }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent backdrop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #2e7d32;
+}
+
+.modal ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.modal ul li {
+  margin: 0.5rem 0;
+}
+
+.modal a {
+  color: #1b5e20;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.modal a:hover {
+  text-decoration: underline;
+}
+
+.modal button {
+  padding: 0.5rem 1rem;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.modal button:hover {
+  background-color: #2e7d32;
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dashboard {
+  background-color: #4caf50; /* Herbal green */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin:30px 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.dashboard:hover {
+  background-color: #388e3c; /* Darker herbal green */
+  transform: translateY(-2px);
+}
+
+.dashboard:active {
+  transform: scale(0.98);
+}
+
+.dashboard:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.4);
+}
+

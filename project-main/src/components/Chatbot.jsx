@@ -1,5 +1,5 @@
 import React from 'react';
-import './Chatbot.css';
+import '../Chatbot.css';
 
 import downArrow from '../assets/down-arrow.png';
 import paperAirplane from '../assets/paper-airplane.png';

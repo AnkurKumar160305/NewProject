@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../Quiz.css";
@@ -82,12 +81,14 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const username = state?.username || 'Friend';
+  const location = useLocation();
+  const name =location.state?.name || localStorage.getItem("name") || "Friend";
 
   const totalQuestions = questions.length;
   const question = questions[currentQuestion];
-  const progressPercent = Math.round(((currentQuestion + 1) / totalQuestions) * 100);
+  const progressPercent = Math.round(
+    ((currentQuestion + 1) / totalQuestions) * 100
+  );
 
   const handleOptionChange = (option) => {
     const updatedAnswers = [...answers];
@@ -107,13 +108,69 @@ function Quiz() {
     setCurrentQuestion((prev) => Math.max(prev - 1, 0));
   };
 
+  const getDoshaResult = () => {
+    const vataKeywords = [
+      "Thin",
+      "High bursts",
+      "Light sleeper",
+      "Quick",
+      "anxious",
+      "Variable",
+      "dislike cold",
+      "yoga",
+    ];
+    const pittaKeywords = [
+      "Medium",
+      "Steady",
+      "Moderate sleeper",
+      "Sharp",
+      "angry",
+      "Strong appetite",
+      "dislike heat",
+      "intense",
+    ];
+    const kaphaKeywords = [
+      "Large",
+      "Consistent",
+      "Heavy sleeper",
+      "Slow",
+      "Withdraw",
+      "Slow digestion",
+      "dislike damp",
+      "gentle",
+    ];
+
+    let scores = { Vata: 0, Pitta: 0, Kapha: 0 };
+
+    answers.forEach((answer) => {
+      const a = answer.toLowerCase();
+      if (vataKeywords.some((k) => a.includes(k.toLowerCase()))) scores.Vata++;
+      if (pittaKeywords.some((k) => a.includes(k.toLowerCase())))
+        scores.Pitta++;
+      if (kaphaKeywords.some((k) => a.includes(k.toLowerCase())))
+        scores.Kapha++;
+    });
+
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    return sorted[0][0]; // return the dosha with the highest score
+  };
+
+  
   const submitQuiz = () => {
     if (answers.some((answer) => answer === null)) {
       alert("Please answer all questions before submitting.");
       return;
     }
-    localStorage.setItem("quizAnswers", JSON.stringify(answers));
-    navigate("/result", { state: { username } }); // Pass username to result
+
+    const finalResult = getDoshaResult(); // <-- compute dosha result here
+
+    navigate("/result", {
+      state: {
+        finalResult, // ✅ pass dosha result
+        answers,
+        name,
+      },
+    });
   };
 
   return (
@@ -121,16 +178,22 @@ function Quiz() {
       <div className="quiz-content">
         <h1 className="quiz-title">Dosha Assessment</h1>
         <p className="quiz-subtitle">
-          Hi {username || "Friend"}! Answer these questions to discover your unique constitution.
+          Hi {name || "Friend"}! Answer these questions to discover your
+          unique constitution.
         </p>
 
         <div className="quiz-progress-info">
-          <span>Question {currentQuestion + 1} of {totalQuestions}</span>
+          <span>
+            Question {currentQuestion + 1} of {totalQuestions}
+          </span>
           <span>{progressPercent}% Complete</span>
         </div>
 
         <div className="quiz-progress-bar">
-          <div className="quiz-progress-fill" style={{ width: `${progressPercent}%` }}></div>
+          <div
+            className="quiz-progress-fill"
+            style={{ width: `${progressPercent}%` }}
+          ></div>
         </div>
 
         <div className="quiz-card">
@@ -176,7 +239,6 @@ function Quiz() {
         </div>
       </div>
     </div>
-
   );
 }
 

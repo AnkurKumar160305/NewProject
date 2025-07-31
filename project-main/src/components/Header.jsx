@@ -1,9 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Leaf } from "lucide-react";
 import "../Header.css";
 
 const Header = ({ onSignInClick, onSignUpClick }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+    navigate("/");
+  };
+
   return (
     <header className="site-headermain">
       <div className="logo-sectionmain">
@@ -17,8 +31,15 @@ const Header = ({ onSignInClick, onSignUpClick }) => {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
-        <button onClick={onSignInClick}>Sign In</button>
-        <button onClick={onSignUpClick}>Sign Up</button>
+
+        {!isAuthenticated ? (
+          <>
+            <button onClick={onSignInClick}>Sign In</button>
+            <button onClick={onSignUpClick}>Sign Up</button>
+          </>
+        ) : (
+          <button onClick={handleLogout}>Logout</button>
+        )}
       </nav>
     </header>
   );

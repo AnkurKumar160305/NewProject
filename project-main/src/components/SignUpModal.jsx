@@ -11,10 +11,11 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
     password: "",
     terms: false,
   });
+  
+  const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -76,22 +77,20 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
           password: formData.password,
         }),
       });
-
       const data = await response.json();
 
       if (!response.ok) {
         alert(data.message || "Registration failed");
-        setLoading(false);
         return;
       }
 
-      // Save token and user info
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      // ✅ Save email to localStorage
+      localStorage.setItem("userEmail", formData.email);
 
-      // Navigate to Name Entry page
-      navigate("/name-entry");
+      alert("Sign up successful! Please sign in.");
+      navigate("/setname");
       onClose();
+      onSignInClick();
     } catch (err) {
       console.error("Registration error:", err);
       alert("Something went wrong. Please try again.");
@@ -118,9 +117,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
       }}
     >
       <div className="signup-modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose} aria-label="Close modal">
-          ×
-        </button>
+        <button className="close-btn" onClick={onClose} aria-label="Close modal">×</button>
         <h2>Create Account</h2>
         <form onSubmit={handleSignUpSubmit}>
           <div className="input-with-icon">
@@ -144,6 +141,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
               placeholder="Email"
               required
               value={formData.email}
+              autoComplete="username"
               onChange={handleInputChange}
             />
             <div className="input-icon">
@@ -153,13 +151,15 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
 
           <div className="password-container">
             <input
-              type={passwordVisible ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              required
-              value={formData.password}
-              onChange={handleInputChange}
-            />
+            type={passwordVisible ? "text" : "password"}
+            name="password"
+            autoComplete="current-password"  // ✅ Fix warning
+            placeholder="Password"
+            required
+            value={formData.password}
+            onChange={handleInputChange}
+          />
+
             <button
               type="button"
               className="toggle-password"
@@ -191,7 +191,11 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
             </label>
           </div>
 
-          <button type="submit" className="primary-button" disabled={!isValid || loading}>
+          <button
+            type="submit"
+            className="primary-button"
+            disabled={!isValid || loading}
+          >
             {loading ? "Registering..." : "Register"}
           </button>
         </form>
@@ -199,9 +203,7 @@ const SignUpModal = ({ isOpen, onClose, onSignInClick }) => {
         <div className="modal-footer">
           <p>
             Already have an account?{" "}
-            <a href="#" onClick={handleSignInRedirect}>
-              Sign In
-            </a>
+            <a href="#" onClick={handleSignInRedirect}>Sign In</a>
           </p>
         </div>
       </div>
